@@ -1,0 +1,31 @@
+<html>
+    <script>
+        let str1 = "ကAhow are you how";
+        
+        console.log("charAt(0) ", str1.charAt(0));
+        console.log("charAt(10) ", str1.charAt(10));
+        console.log("charAt(-2) ", str1.charAt(-2));
+
+        console.log("at(5) ", str1.at(5));
+        console.log("at(-2) ", str1.at(-2));
+        console.log("charCodeAt(0) ", str1.charCodeAt(0));
+        let kaGyi = str1.charCodeAt(0);
+        let strKhaKway = String.fromCharCode(kaGyi+1);
+        console.log('Kha Kway ',strKhaKway);
+
+        console.log(" 'hello'.concat('world') ", 'hello'.concat('world'));
+        console.log("str1.endWith('you') ", str1.endsWith('you'));
+        console.log("str1.includes('are') ", str1.includes('are'));
+        console.log("str1.includes('Are') ", str1.includes('Are'));
+
+        console.log("str1.indexOf('how') ", str1.indexOf('how'));
+        console.log("str1.indexOf('hello') ", str1.indexOf('hello'));
+        console.log("str1.lastIndexOf('how') ", str1.lastIndexOf('how'));
+
+        console.log(" 'a'.localeCompare('b') ", 'a'.localeCompare('b'));
+        console.log(" 'b'.localeCompare('a') ", 'b'.localeCompare('a'));
+        console.log(" 'hello'.localeCompare('hello') ", 'hello'.localeCompare('hello'));
+
+        console.log(" 'hello'.padStart(10) ", 'hello'.padStart(10,'_'));
+    </script>
+</html>
