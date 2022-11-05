@@ -1,0 +1,25 @@
+<html>
+    <script>
+        let str1 = "how are you";
+        console.log(" hello.repeat(4) ", 'hello'.repeat(4));
+        console.log(" helle morning ", 'hello morning morning'.replace('morning','evening'));
+        console.log(" helle morning ", 'hello morning morning'.replaceAll('morning','evening'));
+
+        console.log(" helle morning ", 'hello morning'.search('morning'));
+        console.log('how are you .slice() ->', str1.slice(4));
+        console.log('how are you .slice(4,6) ->', str1.slice(4,6));
+        console.log('how are you .slice(-3) ->', str1.slice(-3));
+        console.log('how are you .slice(-6,-3) ->', str1.slice(-6,-3));
+        console.log('how are you .slice(-6,9) ->', str1.slice(-6,9));
+
+        let strArr = str1.split(' ');
+        console.log("str1.split ",strArr);
+        console.log('how are you .subString(4) ->', str1.substring(4,6));
+        console.log('how are you .subString(-4) ->', str1.substring(-4));
+        console.log('HELLO .toLowerCase() ->', 'HELLO'.toLowerCase());
+
+        console.log(' hello .trim() ->', ' hello '.trim());
+        console.log(' hello .trimStart() ->', ' hello '.trimStart());
+        console.log(' hello .trimEnd() ->', ' hello '.trimEnd());
+    </script>
+</html>

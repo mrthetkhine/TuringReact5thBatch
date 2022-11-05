@@ -1,0 +1,14 @@
+<html>
+    <script>
+        let price = 200;
+        let quantity = 300;
+        let str = "<div>Price is "+price +" total is "+(price*quantity)
+            +"</div>";
+        let templateStr = `<div>
+                Price is ${price} total is ${price*quantity}
+            </div>`;
+
+        console.log("Templatestr ",templateStr);
+        console.log(String.raw`\n`);
+    </script>
+</html>
