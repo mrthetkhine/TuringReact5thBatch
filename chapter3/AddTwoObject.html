@@ -1,0 +1,29 @@
+<html>
+    <script>
+        let money = {
+            value : 100,
+            location : "Anywhere",
+
+            valueOf:function()
+            {
+                console.log('Money valueOf called');
+                return [10];
+            },
+            toString:function()
+            {
+                console.log('Money ToString called');
+                return this.value;
+            },
+            
+        };
+        let obj = {
+            valueOf:function()
+            {
+                console.log('Obj valueOf called');
+                return 200;
+            },
+        }
+        let value = money + obj;
+        console.log("Value ",value);
+    </script>
+</html>

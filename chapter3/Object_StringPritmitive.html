@@ -1,0 +1,18 @@
+<html>
+    <script>
+        let str = new String("Hello");
+        
+        Date.prototype.toString=function()
+        {
+            console.log("ToString called");
+            return this;
+        }
+        Date.prototype.valueOf=function()
+        {
+            console.log("valueOf called");
+            return this;
+        }
+        let data = new Date()+"";
+        console.log("Data ",data);
+    </script>
+</html>

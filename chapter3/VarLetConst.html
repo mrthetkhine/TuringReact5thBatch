@@ -1,0 +1,29 @@
+<html>
+    <script>
+        //hoisting
+        function hello()
+        { //var c;
+            let k = "Hello";
+            {
+                console.log("C ",c);
+            }
+            var c = 20; //c=20;
+            {
+                console.log("c ",c);
+                var c = "Hello";
+                let k = 100;
+                console.log("K is ",k);
+                //let k = 200;
+               
+            }
+            //let k = 200;
+            console.log("C ",c);
+            console.log("K is ",k);
+
+            const some_data = 10;
+            //some_data = 20; 
+        }
+        hello();
+        
+    </script>
+</html>

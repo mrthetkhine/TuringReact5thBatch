@@ -1,0 +1,25 @@
+<html>
+    <script>
+        let money = {
+            value : "100",
+            location : "Anywhere",
+
+            valueOf:function()
+            {
+                console.log('valueOf called');
+                return [10];
+            },
+            toString:function()
+            {
+                console.log('ToString called');
+                return this.value;
+            },
+            
+        };
+        let str = ""+money;
+        console.log("Str ",str);
+
+        let num = + money;
+        console.log("Num is ",num);
+    </script>
+</html>
