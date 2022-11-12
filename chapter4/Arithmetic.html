@@ -1,0 +1,26 @@
+<html>
+    <script>
+       let a = 2+3+'hello';
+       console.log("A ",a);
+
+       let obj = {
+        name : 'Tk',
+        valueOf:function()
+        {
+            console.log("valueOf invoked");
+            return [];
+        },
+        toString:function()
+        {
+            console.log("toString invoked");
+            return 5;
+        }
+       };
+       a = 3 + obj; 
+       //[object Object] object primitive
+       // string + ? number arithmetic?
+       //do
+
+       console.log("A is ",a);
+    </script>
+</html>
