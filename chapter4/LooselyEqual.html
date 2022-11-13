@@ -1,0 +1,43 @@
+<html>
+    <script>
+        let a = 2;
+        let b = "2";
+        
+        console.log("2 == 2 ", 2 == 2);
+        console.log("null == undefined ", null == undefined);
+        console.log("undefined == null ", undefined == null);
+        console.log("undefined === null ", undefined === null);
+
+        console.log("'2' == 2 ", '2' == 2);
+        console.log("'Hello' == 2 ", 'Hello' == 2);
+
+        console.log(" false == 0 ", false ==0);
+        console.log(" false == '0' ", false =='0');
+
+        //false,string ->number,string
+        //(number,string)
+        //number, string->number
+        //compare
+        console.log(" false == '' ", false =='');
+
+        let obj = {
+            name : "Something",
+            valueOf:function()
+            {
+                console.log("ValueOf called");
+                return 0;
+            }
+        }
+        console.log(" '3' == obj", '3' == obj);
+        //obj -> primitive
+        //valueOf->3
+        // '3' == 3
+        // 3 == 3
+        console.log(" null == false", null == false);
+        //null == false (false to number)
+        //null == 0
+        console.log(" undefined == false", undefined == false);
+        console.log(" null == 0", null == 0);
+        console.log(" null == obj", null == obj);
+    </script>
+</html>

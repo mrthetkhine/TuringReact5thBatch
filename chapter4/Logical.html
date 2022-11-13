@@ -1,0 +1,21 @@
+<html>
+    <script>
+        let raining = true;
+        let haveToGoOut = false;
+
+        let needToBringUmbrella = raining && haveToGoOut;
+        console.log("Needto bring umbrella ", needToBringUmbrella);
+
+        console.log("null && false ", (null && false));
+        console.log("'' && false ", ('' && false));
+        console.log(" 0 && false ", (0 && false));
+        console.log("Hello && false ", ('Hello' && false));
+       
+        console.log("false && 'hello' ", (false && 'hello'));
+
+        console.log("'hello' && 'false' ", ('hello' && 'false'));
+
+        console.log("'hello' || false ", ('hello' || false));
+        console.log("'' || 'false' ", ('' || 'false'));
+    </script>
+</html>
