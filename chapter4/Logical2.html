@@ -1,0 +1,37 @@
+<html>
+    <script>
+        function getTrue()
+        {
+            console.log("getTrue called");
+            return true;
+        }
+        function getFalse()
+        {
+            console.log("getFalse called");
+            return false;
+        }
+
+        console.log("getFalse() && getTrue() ", getFalse() && getTrue());
+        console.log("getFalse() & getTrue() ", getFalse() & getTrue());
+
+        let Module = window.MyModule || {
+            method:function()
+            {
+                console.log("Module method");
+            }
+        };
+        function getUserProfileDetail()
+        {
+            console.log("Get user profile detail");
+        }
+        let userExist = false;
+        userExist && getUserProfileDetail();
+
+        console.log("!true ", !true);
+        console.log("!'true' ", !"true");
+        console.log("!'false' ", !"false");
+
+        let myBoolean = !!{};
+        console.log("!!{} ",myBoolean);
+    </script>
+</html>

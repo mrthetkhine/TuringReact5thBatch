@@ -1,0 +1,14 @@
+<html>
+    <script>
+        let obj = {
+            valueOf:function()
+            {
+                console.log("ValueOf called");
+                return 4;
+            }
+        };
+        ++obj;
+        console.log("Obj ",obj);
+        console.log("Obj ",typeof obj);
+    </script>
+</html>
