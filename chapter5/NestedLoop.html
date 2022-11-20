@@ -1,0 +1,23 @@
+<html>
+    <script>
+        //for
+        outer:
+        for(var i=0;i<5;i++)
+        {
+            for(let j=0;j< 3;j++)
+            {
+                console.log(" i is ",i,"J is ",j);
+                if ( i+j == 5)
+                {
+                    break outer;
+                }
+            }
+            console.log("End of inner loop");
+        }
+        somethingelse:
+        console.log('end of outer loop');
+        
+
+        
+    </script>
+</html>

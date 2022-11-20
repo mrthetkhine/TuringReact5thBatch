@@ -1,0 +1,32 @@
+<html>
+    <script>
+      
+        let arr = [10,20,30,40,50,40,12,12];
+        let total = 0;
+        for(let item of arr)
+        {
+            //console.log("Item ",item);
+            total += item;
+        }
+        console.log("Total ",total);
+
+        for(let item in arr)
+        {
+            console.log("Key ",item, " value ",arr[item]);
+           
+        }
+        let obj = {
+            name : "Something",
+            age : 19,
+            address:"Somewhere"
+        };
+        for(let item of Object.values(obj))
+        {
+            console.log("Item of obj ",item);
+        }
+        for(let item of Object.keys(obj))
+        {
+            console.log("Item of obj ",item);
+        }
+    </script>
+</html>

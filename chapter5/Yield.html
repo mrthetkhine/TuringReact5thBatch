@@ -1,0 +1,17 @@
+<html>
+    <script>
+      function* range(from, to) 
+      {
+        for(let i = from; i <= to; i++) 
+        {
+            yield i; 
+        }
+    }
+    let r = range(1,4);
+    console.log("range ",r.next());
+    console.log("range ",r.next());
+    console.log("range ",r.next());
+    console.log("range ",r.next());
+    console.log("range ",r.next());
+    </script>
+</html>
