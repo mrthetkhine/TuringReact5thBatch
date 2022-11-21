@@ -1,0 +1,16 @@
+<html>
+    <script>
+      let parent = {
+         x : [100],
+         y : 200
+      };
+      let obj = Object.create(parent);
+      obj.x.push(200); //obj.x = [100];
+      console.log("Obj ",obj);
+
+      obj.x = [10];
+      console.log("Obj ",obj);
+    </script>
+</html>
+    </script>
+</html>

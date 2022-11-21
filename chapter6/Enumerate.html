@@ -1,0 +1,36 @@
+<html>
+    <script>
+      let obj = {
+        name : "Tk",
+        age : 38,
+        key_1 :'Value of key',
+        someKey: undefined
+      };
+      let another = Object.create(obj);
+
+      for(let p in obj)
+      {
+        console.log("Propery ",p);
+      }
+      console.log("Keys ",Object.keys(obj));
+
+      function undefinedCheck(obj)
+      {
+        for(let p in obj)
+        {
+           if(obj[p] === undefined)
+           {
+            console.warn(`Propery ${p} is undefined`);
+           }
+        }
+      }
+      undefinedCheck(obj);
+      another.something ='Hello';
+      console.log("Keys ",Object.keys(another));
+      console.log("Object.getOwnPropertyNames ",Object.getOwnPropertyNames(another));
+
+      console.log("Reflect.ownKeys",Reflect.ownKeys(another));
+    </script>
+</html>
+    </script>
+</html>

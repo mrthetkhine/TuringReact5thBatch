@@ -1,5 +1,6 @@
 <html>
     <script>
+    
       function div(a,b) 
       {
        if(a ==0 && b== 0)
@@ -13,15 +14,31 @@
       }
      console.log("div (5,2)", div(5,2));
 
-     try
+     function another()
      {
-        console.log("div (0,0)", div(0,0));
+      try
+      {
+         return div(0,0);
+         console.log('Nextline after div(0,0)');
+      }
+      catch(e)
+      {
+         console.log("Error in catch",e);
+         throw e;
+      }
+      finally
+      {
+         console.log('Finally always run'); 
+         return 100;
+      }
      }
-     catch(e)
-     {
-        console.log("Error ",e);
-     }
+     let result = another();
+     console.log('Result ',result);
+     
+     
      
      console.log('End of statement');
+    </script>
+</html>
     </script>
 </html>

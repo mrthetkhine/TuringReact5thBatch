@@ -1,0 +1,36 @@
+<html>
+    <script>
+      let obj = {
+        name : "Tk",
+        age : 38,
+        key_1 :'Value of key'
+      };
+      console.log("age in obj ", 'age' in obj);
+      console.log("toString in obj ", 'toString' in obj);
+
+      console.log("obj.hasOwnProperty('toString') ", obj.hasOwnProperty('toString'));
+      console.log("obj.hasOwnProperty('age') ", obj.hasOwnProperty('age'));
+
+      let parent = {
+        x : 10
+      }
+      let obj2 = Object.create(parent);
+      console.log("ob2j.hasOwnProperty('x') ", obj2.hasOwnProperty('x'));
+      console.log("x in obj2  ", 'x' in obj2);
+
+      for(let p in obj)
+      {
+        console.log("Propery ",p);
+      }
+      for(let p in obj2)
+      {
+        console.log("Object Property ",p);
+      }
+      console.log("x propertyIsEnumerable ", obj2.propertyIsEnumerable('x'));
+      console.log("toString propertyIsEnumerable ", obj2.propertyIsEnumerable('toString'));
+
+      console.log("obj2.x !== undefined ", obj2.x !== undefined);
+    </script>
+</html>
+    </script>
+</html>

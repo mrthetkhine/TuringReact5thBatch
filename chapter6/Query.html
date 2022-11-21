@@ -1,0 +1,24 @@
+<html>
+    <script>
+      let obj = {
+        name : "Tk",
+        age : 38,
+        key_1 :'Value of key'
+      };
+      console.log("Obj ",obj.name);
+
+      let key = "age"
+      console.log("Obj ",obj[key]);
+
+      console.log("Obj ",obj["key_"+1]);
+
+      obj["key_1"] = "value1";
+      obj["key_2"] = "value 2";
+      delete obj.key_2;
+      console.log("Obj ",obj);
+      console.log("Obj.something ",obj.something);
+      console.log("Obj.something?.another ",obj.something?.another);
+    </script>
+</html>
+    </script>
+</html>

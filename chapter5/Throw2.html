@@ -1,0 +1,34 @@
+<html>
+    <script>
+      function div(a,b) 
+      {
+       if(a ==0 && b== 0)
+       {
+        throw new Error("A and b is zero");
+       }
+       else
+       {
+        return a/b;
+       }
+      }
+     console.log("div (5,2)", div(5,2));
+
+   
+     
+     try
+     {
+        console.log("div (0,0)", div(0,0));
+        console.log('Nextline after div(0,0)');
+     }
+     catch(e)
+     {
+        console.log("Error in catch",e);
+     }
+     finally
+     {
+        console.log('Finally always run');
+     }
+     
+     console.log('End of statement');
+    </script>
+</html>
