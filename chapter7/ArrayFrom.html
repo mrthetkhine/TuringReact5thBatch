@@ -1,0 +1,21 @@
+<html>
+    <script>
+      let obj = {
+        value : 10
+      };
+      
+      let arr = [1,2,obj];
+      let arr2 = Array.from(arr);
+      arr[2].value ++;
+
+      console.log("Arr2 ",arr2);
+      console.log("Arr==arr2 ",arr2==arr);
+
+      arr[0] = 10;
+      console.log("Arr ",arr);
+
+      arr[-12] = 'Hello';
+      console.log("Arr ",arr);
+    </script>
+
+</html>

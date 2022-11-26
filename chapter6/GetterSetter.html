@@ -1,0 +1,32 @@
+<html>
+    <script>
+      let obj = {
+        _age : 13,
+        get age()
+        {
+            console.log('Getter');
+            return this._age;
+        },
+        set age(newAge)
+        {
+            console.log('Setter ',newAge);
+            if(newAge >0 && newAge <=100)
+            {
+                this._age = newAge;
+            }
+        }
+      };
+      obj.age = 2000;
+      console.log('Obj ',obj.age);
+
+      let circle = {
+        radius: 20,
+        get area()
+        {
+            return Math.PI* this.radius * this.radius;
+        }
+      };
+      console.log('Circle radius ',circle.area);
+    </script>
+
+</html>

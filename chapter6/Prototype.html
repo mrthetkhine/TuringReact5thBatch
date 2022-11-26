@@ -1,0 +1,26 @@
+<html>
+    <script>
+      let obj = {
+        name : "Tk",
+        age : 38,
+        key_1 :'Value of key',
+        someKey: undefined
+      };
+      console.log("Obj ",obj);
+      let another = Object.create(obj);
+      console.log("another ",another);
+
+      let some = Object.create(null);
+      console.log("Some ",some);
+
+      let target = {x: 1}, 
+      source = {y: 2, z: 3}; 
+      for(let key of Object.keys(source)) 
+      {
+        target[key] = source[key];
+      }
+      console.log('Target ',target);
+    </script>
+</html>
+    </script>
+</html>

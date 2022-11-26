@@ -1,0 +1,27 @@
+<html>
+    <script>
+      let source = {
+        name : "Tk",
+        age : 38,
+        key_1 :'Value of key',
+        someKey: "confidential",
+        method:function()
+        {
+            console.log('This will be skipped');
+        }
+      };
+      let target = Object.assign({
+        name : "Something"
+      },source);
+      console.log('Target ',target);
+      
+      let str = JSON.stringify(target);
+      console.log("Str ",str);
+
+      let obj = Object.assign(source, JSON.parse(str));
+      console.log("Obj ",obj);
+      console.log("target==obj ",obj==target);
+    </script>
+</html>
+    </script>
+</html>

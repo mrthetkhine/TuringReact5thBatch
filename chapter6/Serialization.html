@@ -1,0 +1,30 @@
+<html>
+    <script>
+      let source = {
+        name : "Tk",
+        age : 38,
+        key_1 :'Value of key',
+        someKey: "confidential",
+        method:function()
+        {
+            console.log('This will be skipped');
+        },
+        toJSON:function()
+        {
+            console.log("toJSON of called");
+            return {
+                anotherName: this.name
+            }
+        },
+        
+        
+      };
+      
+      let str = JSON.stringify(source);
+      console.log("Str ",str);
+
+    
+    </script>
+</html>
+    </script>
+</html>

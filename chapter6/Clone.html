@@ -1,0 +1,31 @@
+<html>
+    <script>
+      let position = { x: 0, y: 0 , arr:[1,2,3]};
+      let position2 = { ...position};
+     
+      
+      position2.arr.push(200);
+      console.log('position ',position);
+      console.log('position2 ',position2);
+
+      let position3 = JSON.parse( JSON.stringify(position));
+      position.arr.push(300);
+      console.log('position ',position);
+      console.log('position3 ',position3);
+
+      let obj2 = {
+        method : function()
+        {
+            console.log('This is methdod');
+        },
+        method2()
+        {
+            console.log('Method 2');
+        }
+      };
+      obj2.method();
+      obj2.method2();
+    </script>
+</html>
+    </script>
+</html>

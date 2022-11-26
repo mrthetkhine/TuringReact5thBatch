@@ -1,0 +1,24 @@
+<html>
+    <script>
+      let arr = [10,20,30];
+
+      arr.forEach((item)=>console.log("Item ",item));
+
+      let arr2 = arr.map( x=>x+1);
+      console.log('Arr2 ',arr2);
+
+      let objArr = [
+        {
+            name :"Mg Aung",
+            age : 29
+        },
+        {
+            name :"Mya Mya",
+            age : 29
+        },
+      ];
+      let names = objArr.map(obj=>obj.name);
+      console.log('Names ',names);
+    </script>
+
+</html>
