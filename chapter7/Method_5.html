@@ -1,0 +1,26 @@
+<html>
+    <script>
+      const array1 = ['a', 'b', 'c', 'd', 'e'];
+    // copy to index 0 the element at index 3
+     console.log(array1.copyWithin(0, 3, 5));
+     console.log('Arr1 ',array1);   
+
+    // copy to index 1 all elements from index 3 to the end
+     console.log('copyWithing(1,3)',array1.copyWithin(1, 3));
+
+     let arr2 = [10,100,3,-5,100,7,2,100,2];
+     console.log('Arr2 ',arr2);
+     let index = arr2.indexOf(100);
+     console.log('indexof 100',index);
+
+     index = arr2.lastIndexOf(100);
+     console.log('last indexof 100',index);
+
+     index = arr2.indexOf(100,2);
+     console.log('last indexof 100',index);
+
+     console.log('Arr2 include 100 ',arr2.includes(100));
+     console.log('Arr2 include 200 ',arr2.includes(200));
+    </script>
+
+</html>

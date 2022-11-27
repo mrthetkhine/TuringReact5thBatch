@@ -1,0 +1,49 @@
+<html>
+    <script>
+      let arr = [10,20,13,25,100];
+      console.log('Arr ',arr);
+      const add = function(a,b)
+      {
+        console.log('A ', a, ' B ',b);
+        return a+b;
+      }
+      let total = arr.reduce( add);
+      console.log('Total ',total);
+      let objArr = [
+        {
+            name :"Mg Aung",
+            age : 29,
+            gender : 'Male'
+        },
+        {
+            name :"Mya Mya",
+            age : 29,
+            gender: 'Female'
+        },
+        {
+            name :"Mg Hla",
+            age : 30,
+            gender : 'Male'
+        },
+        {
+            name :"Win Maung",
+            age : 12,
+            gender : 'Male'
+        },
+        {
+            name :"Win Win",
+            age : 29,
+            gender : 'Female'
+        },
+      ];
+      const younger = function (objA,objB)
+      {
+        return objA.age < objB.age ? objA : objB;
+      }
+      const isMale = (obj)=> obj.gender == 'Male';
+      const youngestMale = objArr.filter(isMale)
+                                 .reduce(younger);
+      console.log('Youngest male ',youngestMale);                              
+    </script>
+
+</html>

@@ -1,0 +1,37 @@
+<html>
+    <script>
+      let arr = [11,20,13,25,99];
+      const isEven = (x)=> x % 2 ==0;
+    
+      let firstEven = arr.find(isEven);
+      console.log("First Even ",firstEven);
+
+      const greaterThan100 = (x)=> x>100;
+      let element = arr.find(greaterThan100);
+      console.log('Element with greater than 100 ',element);
+
+      let index = arr.findIndex(isEven);
+      console.log("First Even index ",index);
+
+      index = arr.findIndex(greaterThan100);
+      console.log("First Even index ",index);
+
+      let allIsEven = arr.every(isEven);
+      console.log('All even ? ',allIsEven);
+
+      const lessThan100 = (x)=> x<100;
+      let allLessThan100 = arr.every(lessThan100);
+      console.log('All less than 100 ',allLessThan100);
+
+      let someElementIsEven = arr.some(isEven);
+      console.log('someElementIsEven ',someElementIsEven);
+
+      let arr2 = [[1,[2]], 3, 4, [5,6]];
+      console.log('Arr2 ',arr2.flat(2));
+
+      arr2 = arr.concat(1,2,3).concat([5,6,7,8,9]);
+      console.log('Arr2 ',arr2);
+      console.log('Arr ',arr);
+    </script>
+
+</html>

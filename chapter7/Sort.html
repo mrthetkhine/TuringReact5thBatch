@@ -1,0 +1,57 @@
+<html>
+    <script>
+        let arr = [1,26,100,12,35,45];
+        /*
+        == 0,
+        > +
+        < -
+        */
+        function comparator(a,b)
+        {
+            return b-a;
+        }
+        arr.sort(comparator);
+        console.log('Arr ',arr);
+    
+        let objArr = [
+       
+        {
+            name :"Mya Mya",
+            age : 25,
+            gender: 'Female'
+        },
+        {
+            name :"Mg Hla",
+            age : 29,
+            gender : 'Male'
+        },
+        {
+            name :"Win Win",
+            age : 31,
+            gender : 'Female'
+        },
+        {
+            name :"Mg Aung",
+            age : 29,
+            gender : 'Male'
+        },
+      ];
+      function compareObj(objA,objB)
+      {
+        if(objA.age == objB.age )
+        {
+            return objA.name.localeCompare(objB.name);
+        }
+        else
+        {
+            return objA.age - objB.age;
+        }
+        
+      }
+      objArr.sort(compareObj);
+      console.log('Obj Arr ',objArr);
+      objArr.reverse();
+      console.log('Obj Arr ',objArr);
+    </script>
+
+</html>
