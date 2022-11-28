@@ -1,0 +1,35 @@
+<html>
+    <script>
+      
+       function hello()
+       {
+        console.log('Hello');
+       }
+       //can assign to variable.
+        //can passs parameter to function
+        //can return from function
+       //Rule 1
+       let fun = hello;
+       fun();
+
+       //Rule 2
+       function acceptFun(func)
+       {
+        console.log('Inside acceptFun ');
+        func();
+       }
+       acceptFun(hello);
+
+       //Rule 3
+       function getFunc()
+       {
+        return function()
+        {
+            console.log('I am new function');
+        }
+       }
+       getFunc()();
+       console.log('getFunc() ',getFunc());
+    </script>
+
+</html>

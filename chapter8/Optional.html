@@ -1,0 +1,26 @@
+<html>
+    <script>
+       function greet(str1='hello',msg='morning')//parameter
+       {
+        console.log(`${str1}  ${msg}`);
+       }
+       greet('Hello');
+       greet();
+
+       function sum(first=100,...numbers)
+       {
+        console.log('First ',first);
+        console.log('Number ',numbers);
+        let total = 0;
+        for(let value of numbers)
+        {
+            total += value;
+        }
+        return total;
+        }
+        console.log('Sum () ',sum());
+       console.log('Sum 1,2,3,4,5,9 ',sum(1,2,3,4,5,9));
+       console.log('Sum 10,20 ',sum(10,20));
+    </script>
+
+</html>

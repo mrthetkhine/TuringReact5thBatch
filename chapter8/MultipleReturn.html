@@ -1,0 +1,26 @@
+<html>
+    <script>
+      
+       function div(a,b)
+       {
+        if(a == 0 && b==0)
+        {
+            return [new Error('Division with 0/0'),undefined];
+        }
+        else
+        {
+            return [undefined,a/b];
+        }
+       }
+       let [err,result] = div(14,2);
+       if(err)
+       {
+        console.log('Error ',err);
+       }
+       else
+       {
+        console.log('Result ',result);
+       }
+    </script>
+
+</html>

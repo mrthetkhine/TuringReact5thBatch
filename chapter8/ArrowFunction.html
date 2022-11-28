@@ -1,0 +1,30 @@
+<html>
+    <script>
+       function hello()
+       {
+        return 300;
+       } 
+       
+       let k = hello();
+       console.log('K ',k);
+
+       function add(a,b)
+       {
+        return a+b;
+       }
+       k = add(10,20);
+       console.log(" K ",k);
+
+       const hello2 = ()=>300;
+       console.log("Hello2 ",hello2());
+
+       const add2 = (a,b)=> {
+            console.log("Parameter a ",a , " b ",b);
+            return a + b;
+       };
+       console.log('Add2(100,200) ',add2(100,200));
+       const h = x => ({ value: x });
+       console.log("h() ",h(10));
+    </script>
+
+</html>

@@ -1,0 +1,29 @@
+<html>
+    <script>
+       let obj = {
+        name : 'TK',
+        work()
+        {
+            console.log(`${this.name} is working`);
+        },
+        get age()
+        {
+            console.log('Get age called');
+            return 1000;
+        },
+        valueOf()
+        {
+            console.log('ValueOf called');
+            return 10;
+        }
+       };
+       obj.work();
+
+       let date = new Date();
+       console.log("date ",date);
+       console.log('GetAge ',obj.age);
+       obj + 2;
+
+    </script>
+
+</html>

@@ -1,0 +1,20 @@
+<html>
+    <script>
+      const parent = {
+        parentKey :'Something'
+      };
+      const child = Object.create(parent,{
+        'hiddenKey':{
+            enumerable : false
+        }
+      }
+       
+      );
+      child.another = 'Else';
+      let specialName = Symbol('special');
+      child[specialName] = 'speical value';
+      console.log('Keys ',Object.keys(child));
+      console.log('GetOwn property ',Object.getOwnPropertyNames(child));
+    </script>
+
+</html>

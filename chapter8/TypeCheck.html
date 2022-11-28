@@ -1,0 +1,19 @@
+<html>
+    <script>
+      
+
+       function add(a,b)
+       {
+        if(add.length!== arguments.length)
+        {
+            console.warn("not enough parameter required ",add.length, " but supplied ",arguments.length);
+            return 0;
+        }
+        return a+b;
+       }
+       console.log("Add ",add());
+       console.log("Add 1",add(1));
+       console.log("Add 1,2",add(1,2));
+    </script>
+
+</html>

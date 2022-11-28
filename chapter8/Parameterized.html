@@ -1,0 +1,39 @@
+<html>
+    <script>
+       function greet(msg)//parameter
+       {
+        console.log(`Hello  ${msg}`);
+       }
+       greet('morning');//argument
+       greet('good afternoon');
+
+
+       function inc(a)
+       {
+        a++;
+       }
+       let k = 10;
+       inc(k); // a = k;
+       console.log('K ',k);
+
+       function change(obj)
+       {
+        obj.value ++;
+       }
+       let obj2 = {
+        value : 10
+       };
+       change(obj2); //obj2 = obj;
+       console.log('Value ',obj2.value);
+
+       function change2(obj)
+       {
+        obj = {
+            value : 100
+        };
+       }
+       change2(obj2); //obj2 = obj;
+       console.log('Value ',obj2.value);
+    </script>
+
+</html>

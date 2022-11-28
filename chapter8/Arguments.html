@@ -1,0 +1,20 @@
+<html>
+    <script>
+      
+
+       function sum()
+       {
+        console.log('Sum arguments ',arguments);
+        let total = 0;
+        for(var i=0;i< arguments.length;i++)
+        {
+            total += arguments[i];
+        }
+        return total;
+        }
+        console.log('Sum () ',sum());
+       console.log('Sum 1,2,3,4,5,9 ',sum(1,2,3,4,5,9));
+       console.log('Sum 10,20 ',sum(10,20));
+    </script>
+
+</html>

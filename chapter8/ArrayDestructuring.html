@@ -1,0 +1,21 @@
+<html>
+    <script>
+      
+       let [a,b] = [100,200,300];
+       console.log("A ",a, " b ",b);
+
+       [a,...b] = [100,200,300,400];
+       console.log("A ",a, " b ",b);
+
+       let i = 10;
+       let j = 20;
+       /*
+       let k = i;
+       i = j;
+       j = k;
+       */
+       [i,j] = [j,i];
+       console.log("I ",i, " j ",j);
+    </script>
+
+</html>
