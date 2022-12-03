@@ -1,0 +1,29 @@
+<html>
+    <script>
+
+      let obj = {
+        name : 'TK',
+        age : 38,
+        greet(msg)
+        {
+            console.log(msg,`I am  ${this.name} age ${this.age}`);
+        }
+      }
+      let obj2 = {
+        name : 'Something',
+        age : 39
+      }
+      obj.greet('Hello');
+
+      let method = obj.greet;
+      method.call(obj,'Hello');
+
+      let arr = [10,20,-39,100,34];
+      console.log('Math.max ',Math.max.apply(Math,arr));
+      obj.greet.call(obj2,'Hello fri');
+
+      let method2 = obj.greet.bind(obj2);
+      method2('Hello from starnger');
+    </script>
+
+</html>

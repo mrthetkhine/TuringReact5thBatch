@@ -1,0 +1,32 @@
+<html>
+    <script>
+
+        const forEach = (array,fn) => {
+            for(let i=0;i < array.length;i++)
+                    fn(array[i]);
+        }
+        const print= (x)=>console.log('Item is ',x);
+        let arr = [10,20,30,40];
+        forEach(arr,print);
+
+        const unless = (predicate,fn) => {
+            if(!predicate)
+                fn();
+        }
+        let k = 3;
+        unless(k%2==0,()=>console.log('It is odd'));
+
+        const times = (times, fn) => {
+            for (var i = 0; i < times; i++)
+                fn(i); 
+        }
+        times(3,print);
+        times(100, function(n) {
+            unless(n % 2, function() {
+                console.log(n, "is even");
+            });
+        });
+
+    </script>
+
+</html>

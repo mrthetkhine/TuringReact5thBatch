@@ -1,0 +1,43 @@
+<html>
+    <script>
+
+      function add(a,b)
+      {
+        console.log('Constructor ',arguments.callee.length);
+        /*
+        if( arguments.callee.length != arguments.length)
+        {
+            console.warn('Function need ',arguments.callee.length, " but supplied ",arguments.length);
+            return 0;
+        }*/
+        return a+b;
+      }
+      let add2 = checkParameter(add);
+      console.log('Add.length ',add.length);
+      console.log('Add (1,2)',add2(1,2));
+
+      function greet(msg)
+      {
+        console.log('Hello ',msg);
+      }
+      function checkParameter(func)
+      {
+        return function()
+        {
+            if( func.length != arguments.length)
+            {
+                console.warn('Function ',func.name,'need ',func.length, " parameter but supplied ",arguments.length);
+                return 0;
+            }
+            else
+            {
+               return func.apply(null,arguments);
+            }
+        }
+      }
+      let newGreet = checkParameter(greet);
+      newGreet();
+      newGreet('how are you');
+    </script>
+
+</html>
