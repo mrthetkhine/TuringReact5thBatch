@@ -1,0 +1,38 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+       let k = 2;
+
+       let arr = [1,2,3,4,5];
+       const double =(x)=> x*2;
+       
+       let result = arr.reduce((a,b)=>{
+            return a.concat(double(b));
+       },[]);
+       console.log('Result ',result);
+
+       const isEven = (x)=> x%2==0;
+       let evenList = arr.reduce((a,ele)=>{
+            return isEven(ele)?[...a,ele]:a;
+       },[]);
+       console.log('EventList ',evenList);
+
+       const reduce = (array,fn,initialValue) => {
+            let accumlator;
+            if(initialValue != undefined)
+                accumlator = initialValue;
+            else
+                accumlator = array[0];
+            if(initialValue === undefined)
+                for(let i=1;i<array.length;i++)
+                        accumlator = fn(accumlator,array[i])
+            else
+                for(const value of array)
+                    accumlator = fn(accumlator,value)
+            return [accumlator]
+       }
+       let arr2 = [1,2,3];
+       let total = reduce(arr,(a,b)=> a+b);
+       console.log('Total ',total);
+    </script>
+</html>

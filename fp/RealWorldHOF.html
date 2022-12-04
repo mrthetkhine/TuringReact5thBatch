@@ -1,0 +1,28 @@
+<html>
+    <script>
+    
+    //predicate function
+    //(x)=> boolean
+    const isEven = (x) => x % 2 == 0;
+    const every = (arr,fn) => {
+        let result = true;
+        for(let i=0;i<arr.length;i++)
+            result = result && fn(arr[i])
+        return result;
+    };
+    let arr = [10,2,4,12,100];
+    let result = every(arr,isEven);
+    console.log('All even ',result);
+
+    const some = (arr,fn) => {
+        let result = false;
+        for(const value of arr)
+            result = result || fn(value)
+        return result;
+    }
+    arr = [10,2,4,NaN,100];
+    let someHaveNan = some(arr, isNaN);
+    console.log('Some have NaN ',someHaveNan);
+    </script>
+
+</html>

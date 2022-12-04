@@ -1,0 +1,25 @@
+<html>
+    <script>
+        let arr = [1, 2, 3].map((a) => { return a * a });
+        console.log("Arr ",arr);
+
+        const mapDisplay = function()
+        {
+            console.log('Arguments ',arguments);
+            return arguments[0];
+        }
+        let arr2 = ['1', '2', '3'];
+        //1 => (1,0)
+        //2 =  (2,1)
+
+        const unary = (fn) =>
+                        fn.length === 1
+                            ? fn
+                            : (arg) => fn(arg);
+        let result = arr2.map(unary(parseInt));
+        console.log('Result ',result);
+        arr2.map(mapDisplay);
+
+    </script>
+
+</html>

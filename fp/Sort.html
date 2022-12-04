@@ -1,0 +1,46 @@
+<html>
+    <script>
+    
+    let comparator = (x,y) => x-y;    
+    let arr = [10,2,4,12,100];
+    arr.sort(comparator);
+    console.log('Arr sort ',arr);
+
+
+    let humans = [
+        {
+            name : 'Mg Mg',
+            age : 32,
+        },
+        {
+            name : 'Aung Aung',
+            age : 15,
+        },
+        {
+            name : 'Hla Hla',
+            age : 40,
+        },
+    ];
+    const sortBy = (property) => {
+        return (a,b) => {
+            let aProperty = a[property];
+            let bProperty = b[property];
+            if( aProperty === bProperty)
+            {
+                return 0;
+            }
+            else if( aProperty > bProperty)
+            {
+                return 1;
+            }
+            else
+            {
+                return -1;
+            }
+        }
+    }
+    humans.sort(sortBy('name'));
+    console.log('Humans ',humans);
+    </script>
+
+</html>

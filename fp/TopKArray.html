@@ -1,0 +1,42 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+       let k = 2;
+       let arr = [2,2,2,1,1,1,1,2,2,2,3];
+
+       //count frequencies
+       //sort by frequencies
+       //extract
+       let groups = {}; 
+       /*
+       {
+        2:3,
+        1:1
+       }
+       */
+       groups = arr.reduce( (gp,element)=>{
+        
+        /*if(gp[element])
+        {
+            gp[element] ++;
+        }
+        else
+        {
+            gp[element] =1;
+        }
+        return gp;
+        */
+       return gp[element]?
+                        (gp[element]++,gp): 
+                        (gp[element]=1,gp);
+       } ,{});
+       console.log('Groups ',groups);
+       let countArr = Object.entries(groups);
+       console.log('Counted Arr ',countArr);
+       //[ ['1',4],['2',6],['3',1]]
+       let firstFrequent = countArr.reduce((a,b)=>{
+            return (a[1] > b[1])? a: b;
+       });
+       console.log('First frequent ',firstFrequent);
+    </script>
+</html>

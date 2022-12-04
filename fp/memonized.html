@@ -1,0 +1,37 @@
+<html>
+    <script>
+        //3! = 3 * 2 * 1;
+        function factorial(n)
+        {
+            console.log('Compute Factorial ',n);
+            let result = 1;
+            for(let i=1;i<= n;i++)
+            {
+                result *= i;
+            }
+            return result;
+        }
+        //console.log("Fact(3) ",factorial(3));
+        //console.log("Fact(3) ",factorial(3));
+
+        const memonize = (fn)=>{
+            let lookupTable = {};
+            return function(x)
+            {
+                if(lookupTable[x] !== undefined)
+                {
+                    return lookupTable[x];
+                }
+                else
+                {
+                    lookupTable[x] = fn(x);
+                    return lookupTable[x];
+                }
+            }
+        };
+        let newFac = memonize(factorial);
+        console.log("Fact(3) ",newFac(3));
+        console.log("Fact(3) ",newFac(3));
+    </script>
+
+</html>
