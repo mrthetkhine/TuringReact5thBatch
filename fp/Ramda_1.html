@@ -1,0 +1,22 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+        const equals3 = R.equals(3);
+        let arr = [3,3,3];
+        console.log('AllEqual3 ',R.all(equals3)(arr));
+
+        //a<0
+        /*
+        lt = (a,0)
+        flip = (0,a)
+        */
+        const lessThan0 = R.flip(R.lt)(0);
+        const lessThan2 = R.flip(R.lt)(2);
+        console.log('Lessthan 0 ',R.any(lessThan0)([1, 2])); //=> false
+        console.log('Lessthan 2 ',R.any(lessThan2)([1, 2])); //=>
+
+        let result = R.ap([R.multiply(2), R.add(3)], [1,2,3]);
+        console.log('Apply ',result);
+        
+    </script>
+</html>

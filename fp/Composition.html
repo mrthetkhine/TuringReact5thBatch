@@ -1,0 +1,61 @@
+<html>
+    <script>
+        const toUpper = (str)=>str.toUpperCase();
+        const appendHi = (str)=> str + ' hi';
+        const appendHiAndToUpper = (x)=> toUpper(appendHi(x));
+        console.log('appendHiAndToUpper ',appendHiAndToUpper('hello'));
+        //console.log('appendHi ',appendHi('hello'));
+        /*
+        function compose(f,g)
+        {
+            return function(x)
+            {
+                return f(g(x));
+            }
+        }
+        */
+        const compose = (f,g)=>(x)=> f(g(x));
+        const pipe = (f,g)=>(x)=> g(f(x));
+
+        const newVersion = compose(toUpper,appendHi);
+        const newVersion2 = pipe(appendHi,toUpper);
+        console.log('NewVersion ',newVersion('hello'));
+        console.log('NewVersion2 ',newVersion2('hello'));
+
+        const addOne = (x)=> x + 1;
+        const double = (x) => x * 2;
+        const addOneAndDouble = compose(double,addOne);
+        console.log('AddOneAndDouble ',addOneAndDouble(3));
+
+        const mismatch = pipe(toUpper,double);
+        console.log('Mismatch ',mismatch('Hello'));
+
+        const reduce = (array,fn,initialValue) => {
+            let accumlator;
+            if(initialValue != undefined)
+                accumlator = initialValue;
+            else
+                accumlator = array[0];
+            if(initialValue === undefined)
+                for(let i=1;i<array.length;i++)
+                        accumlator = fn(accumlator,array[i])
+            else
+                for(const value of array)
+                    accumlator = fn(accumlator,value)
+            return [accumlator]
+       }
+        const composeMany = (...fns) =>
+                                    (value) =>
+                                        reduce(fns.reverse(),(acc, fn) => fn(acc), value);
+        const pipeMany = (...fns) =>
+                                    (value) =>
+                                        reduce(fns,(acc, fn) => fn(acc), value);
+        const divBy3 = (x)=> x/3;
+        let newMathFunc = pipeMany(
+                                addOne,
+                                double,
+                                divBy3);
+        console.log('NewMatchFunc ',newMathFunc(4));
+    </script>
+
+</html>

@@ -1,0 +1,17 @@
+<html>
+    <script>
+        const zip = (leftArr,rightArr,fn) => {
+            let index, results = [];
+            for(index = 0;index < Math.min(leftArr.length, rightArr.length);index++)
+                results.push(fn(leftArr[index],rightArr[index]));
+            return results;
+        }
+        const pair=(x,y)=>[x,y];
+        let numbers = [1,2,3];
+        let strings = ["one","two"];
+
+        let result = zip(numbers,strings,pair);
+        console.log('Result ',result);
+    </script>
+
+</html>

@@ -1,0 +1,28 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+        const identity = (x)=>x;
+        console.log('Identity ',identity(20));
+
+        const consoleLog = x => console.log('x is ' + x);
+        const log = R.tap(consoleLog);
+
+        let arr = [1,2,3,4,10];// average->10/5=2
+
+        let total = R.sum(arr);
+        console.log('Total ',total);
+        console.log('Divide ',R.divide(10,2));
+
+        /*
+
+        arr=>R.sum =>number
+
+        sum(array)
+        R.length(array)
+        */
+        const average = R.converge(R.divide, [R.sum, R.length]);
+        //console.log('Average ',average);
+    
+        console.log("Average ",average(arr));
+    </script>
+</html>
