@@ -1,0 +1,26 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+       let k = 2;
+       let arr = [2,2,2,1,1,1,1,2,2,2,3];
+    
+       const logX = (x)=>console.log("X is ",x);
+       const log = R.tap(logX);
+
+       let topKFrequentAnother = R.pipe(
+        R.countBy(R.identity),
+        log,
+        R.mapObjIndexed((frequency,index,obj)=>[index,frequency]),
+        log,
+        R.values,
+        log,
+        R.sort( (a,b)=>b[1]-a[1]),
+        log,
+        R.map(ele=>ele[0]),
+        log,
+        R.take(k),
+        log
+       );
+       console.log('Top K frequent ',topKFrequentAnother(arr));
+    </script>
+</html>

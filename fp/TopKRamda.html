@@ -1,0 +1,54 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+       let k = 2;
+       let arr = [2,2,2,1,1,1,1,2,2,2,3];
+    
+       const logX = (x)=>console.log("X is ",x);
+       const log = R.tap(logX);
+
+       /*
+       let groupByCount = R.groupBy(R.identity)(arr);
+        console.log('Group Count ',groupByCount);
+
+        let countArrGroup = R.map((ele)=>[ele[0],ele.length])(groupByCount);
+        let countArr = R.values(countArrGroup);
+        console.log('Count Arr ',countArr);
+
+        let sortedCount = R.sort((a,b)=> b[1]-a[1])(countArr);
+        console.log('sorteCount ',sortedCount);
+        
+        let topKFrequent = R.take(k) (sortedCount);
+        console.log('topKFrequent ',topKFrequent);
+
+        let finalResult = R.map(ele=>ele[0])(topKFrequent);
+        console.log('finalResult ',finalResult);
+        */
+       let topFrequentK = R.pipe(
+            log,
+            R.groupBy(R.identity),
+            log,
+            R.map((ele)=>[ele[0],ele.length]),
+            log,
+            R.values,
+            log,
+            R.sort((a,b)=> b[1]-a[1]),
+            log,
+            R.take(k),
+            R.map(ele=>ele[0])
+       );
+       console.log('Result ',topFrequentK(arr));
+
+       /*
+       let frequencyCount = R.countBy(R.identity)(arr);
+       let frequencyArr = R.values(frequencyCount);
+       let topK = R.take(k)(frequencyArr);
+       console.log('Result ',topK);
+       */
+       let topKFrequentAnother = R.pipe(
+        R.countBy(R.identity),
+       
+       );
+       console.log('Top K frequent ',topKFrequentAnother(arr));
+    </script>
+</html>

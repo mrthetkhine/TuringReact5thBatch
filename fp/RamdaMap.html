@@ -1,0 +1,34 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+       let double = (x)=> x * 2;
+    
+        let result = R.map(double, {x: 1, y: 2, z: 3});
+        console.log('Result ',result);
+        let students =[ {
+                    name: 'Eddy', 
+                    score: 58,
+                    gender:'Female',
+                    city:'Mandalay',
+                },
+                {
+                    name: 'Another', 
+                    score: 81,
+                    gender:'Male',
+                    city:'Yangon',
+                },
+                {
+                    name: 'Jack', 
+                    score: 69,
+                    gender:'Female',
+                    city:'Tokyo',
+                }
+            ];
+        console.log('Names ',R.pluck('name')(students));
+        console.log('Names ',R.map(R.prop('name'))(students));
+
+        //[name,gender]
+        let namesAndGender = (student)=> [student.name, student.gender];
+        console.log('Names ',R.map(namesAndGender)(students));
+    </script>
+</html>

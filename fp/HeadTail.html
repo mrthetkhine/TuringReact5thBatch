@@ -1,0 +1,18 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+       
+       let list = [1,2,4,5];
+       console.log('Head ',R.head(list));
+       console.log('Tail ',R.tail(list));
+       console.log('Tail ',R.tail([]));
+
+       function totalSum(lst)
+       {
+        return R.isEmpty(lst)?
+                0:
+                R.head(lst)+ totalSum(R.tail(lst));
+       }
+       console.log('Total Sum ',totalSum(list));
+    </script>
+</html>

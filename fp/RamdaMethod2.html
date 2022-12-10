@@ -1,0 +1,20 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+       
+       let obj = {
+        address : 'Somewhere',
+        name :'Unknown',
+        age : 37,
+       };
+       let isKeyString = (value,key)=> typeof value ==='string';
+       let objWithStringKey = R.pickBy(isKeyString)(obj);
+       console.log("Object With String Key ",objWithStringKey); 
+
+       const abby = {name: 'Abby', age: 7, hair: 'blond', grade: 2};
+       const fred = {name: 'Fred', age: 12, hair: 'brown', grade: 7};
+       const kids = [abby, fred];
+       let result = R.project(['name', 'grade'], kids); 
+       console.log('Result ',result);
+    </script>
+</html>

@@ -1,0 +1,35 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+       
+        const students = [
+                {
+                    name: 'Abby', 
+                    score: 84,
+                    gender:'Male',
+                    city:'Yangon',
+                },
+
+                {
+                    name: 'Eddy', 
+                    score: 58,
+                    gender:'Female',
+                    city:'Mandalay',
+                },
+                {
+                    name: 'Another', 
+                    score: 81,
+                    gender:'Male',
+                    city:'Yangon',
+                },
+                {
+                    name: 'Jack', 
+                    score: 69,
+                    gender:'Female',
+                    city:'Tokyo',
+                }
+            ];
+       let value = R.prop('gender',students[0]);
+       console.log('Gender value ',value);
+    </script>
+</html>

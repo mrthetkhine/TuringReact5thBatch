@@ -1,0 +1,16 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+       
+        const failedFetch = id => Promise.reject({ firstName: 'OkName', lastName: 'Ok Last Name' });
+        const useDefault = () => ({ firstName: 'Bob', lastName: 'Loblaw' });
+
+        //recoverFromFailure :: String -> Promise ({ firstName, lastName })
+        const recoverFromFailure = R.pipe(
+        failedFetch,
+        R.otherwise(useDefault),
+        R.andThen(R.pick(['firstName', 'lastName'])),
+        );
+        recoverFromFailure(12345).then(console.log);
+    </script>
+</html>

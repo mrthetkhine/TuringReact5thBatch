@@ -1,0 +1,26 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+       let obj = {
+        
+        profile:{
+            address : {
+                city: "Yangon"
+            }
+        }
+        
+       }
+       let getCity = R.path(['profile','address','city']);
+       let isYangonThar = R.pathEq(['profile','address','city'],'Yangon');
+       console.log("City ",getCity(obj));
+       console.log("isYangonThar ",isYangonThar(obj));
+
+       let another = {
+        address : 'Somewhere',
+        name :'Unknown',
+        age : Number.POSITIVE_INFINITY
+       };
+       let clone = R.pick(['name','address'])(another);
+       console.log("Clone ",clone);
+    </script>
+</html>
