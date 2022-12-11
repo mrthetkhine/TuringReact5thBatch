@@ -1,0 +1,22 @@
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.28.0/ramda.js"></script>
+    <script>
+        
+       function computeSomethingAsync()
+       {
+        setTimeout(()=>{
+            throw new Error('Something got wrong');
+        },2000);
+       }
+
+       try
+       {
+        computeSomethingAsync();
+       }
+       catch(e)
+       {
+        console.error('We got ',e);
+       }
+       console.log("After compute");
+    </script>
+</html>

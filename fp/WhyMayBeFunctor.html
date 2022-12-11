@@ -1,0 +1,12 @@
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.28.0/ramda.js"></script>
+    <script>
+        
+        const toUpper = (str)=>str.toUpperCase();
+        const appendHi = (str)=>str + ' hi';
+        const compose = (f,g) => (x)=> f(g(x));
+
+        const toUpperAndAppendHi = compose( appendHi,toUpper);
+        console.log('toUpperAndAppendHi("hello") ',toUpperAndAppendHi(undefined));
+    </script>
+</html>

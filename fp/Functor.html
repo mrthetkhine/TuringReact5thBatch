@@ -1,0 +1,36 @@
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.28.0/ramda.js"></script>
+    <script>
+        /*
+        let i = 0;
+        i = i +1;
+        */
+        const Functor = (v)=>({
+            value: v,
+            map : (f)=>Functor(f(v)),
+            valueOf:()=>v
+        });
+        Functor.of = (v)=> Functor(v);
+
+        const compose = (f,g) => (x)=> f(g(x));
+
+        const identity = (x)=>x;
+        let counter = Functor.of(1);
+
+        let double = (x)=> x*2;
+        let incOne = (x)=> x+1;
+
+        let newFunc = compose(incOne,double);
+        let doubleCount = counter.map( double)
+                                 .map( incOne);
+
+        console.log('Counter ',counter);
+        console.log('DoubleCount ',doubleCount);
+
+        let idFunctor = counter.map(identity);
+        console.log('Law 1', counter.value== idFunctor.value);
+
+        let afterCompose = counter.map(newFunc);
+        console.log('Law 2 ',doubleCount.value == afterCompose.value);
+    </script>
+</html>

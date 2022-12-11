@@ -1,0 +1,27 @@
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.28.0/ramda.js"></script>
+    <script>
+        
+       function computeSomethingAsync(data)
+       {
+        return new Promise(function(resolve,reject)
+        {
+            setTimeout(()=>{
+                if( data %2==0)
+                {
+                    resolve(data*2);
+                }
+                else
+                {
+                    reject(new Error('Something got wrong'));
+                }
+               
+            },2000);
+        })
+       
+       }
+
+       computeSomethingAsync(101).then(data=>console.log('Data ',data),error=>console.log(error));
+       console.log("After compute");
+    </script>
+</html>

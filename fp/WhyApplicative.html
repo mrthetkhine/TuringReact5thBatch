@@ -1,0 +1,24 @@
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.28.0/ramda.js"></script>
+    <script>
+        /*
+        let i = 0;
+        i = i +1;
+        */
+        const Functor = (v)=>({
+            value: v,
+            map : (f)=>Functor(f(v)),
+            valueOf:()=>v
+        });
+        Functor.of = (v)=> Functor(v);
+
+        let add = (x,y)=>x+y;
+        let curriedAdd = R.curry(add);
+        console.log('Curried Add ',curriedAdd);
+
+        let counter = Functor.of(20)
+                             .map(curriedAdd);
+        console.log('Counter ',counter);
+        console.log('Counter ',counter.value(3));
+    </script>
+</html>

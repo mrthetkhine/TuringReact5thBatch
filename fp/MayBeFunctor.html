@@ -1,0 +1,39 @@
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.28.0/ramda.js"></script>
+    <script>
+        
+        const toUpper = (str)=>str.toUpperCase();
+        const appendHi = (str)=>str + ' hi';
+        const compose = (f,g) => (x)=> f(g(x));
+
+        const toUpperAndAppendHi = compose( appendHi,toUpper);
+        //console.log('toUpperAndAppendHi("hello") ',toUpperAndAppendHi(undefined));
+
+        const MayBe = (v)=>({
+            value: v,
+            isNothing:()=> v ===undefined || v ===null,
+            map : function (f){
+                return this.isNothing()?
+                        MayBe.of(v)
+                        :MayBe(f(v));
+            },
+            orElse:function (defaultValue){
+                //console.log('Or else called ',this.isNothing());
+               return this.isNothing()
+                        ?MayBe.of( defaultValue) 
+                        : MayBe.of(v);
+            },
+            valueOf:()=>v
+        });
+        MayBe.of = (v)=> MayBe(v);
+       
+        const tokens= (str)=> str.split(' ');
+        let str = 'good morning';
+        //str = null;
+        let result = MayBe.of(str)
+                          .map(toUpperAndAppendHi)
+                          .map(tokens)
+                          .orElse([]);
+        console.log('Result value ',result.value); 
+    </script>
+</html>
