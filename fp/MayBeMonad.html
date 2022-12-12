@@ -1,0 +1,49 @@
+<html>
+    <script>
+       const MayBe = (function()
+       {
+            const Some = function (x)
+            { 
+                this.x = x
+            };
+            Some.prototype.fmap = function (fn) 
+            { 
+                return MayBe.of(fn(this.x)); 
+            };
+            Some.prototype.bind = function(fn)
+            { 
+                console.log('Bind ',this.x);
+                return fn(this.x);
+            };
+            Some.prototype.toString = function () { 
+                return `Some(${this.x})`; 
+            };
+
+            const None = function(){};
+            None.fmap = () => None;
+            None.bind = () => None;
+            None.toString = () => 'None';
+
+            return{
+                of:(x)=> x===null || x === undefined? None: new Some(x), 
+                lift:(fn)=>(...args)=>MayBe.of(fn(...args)),
+                Some,
+                None
+            }
+       })();
+       
+       const div = (a,b)=>b ===0?null:a/b;
+       const mDiv = MayBe.lift(div);
+       
+       console.log(div(10,0));
+       console.log("FlatMap ",mDiv(100,2).fmap(x=>x*2)+'');
+       console.log("Bind ",mDiv(100,2).bind(x=>x*2)+'');
+       console.log('Monad ',mDiv(100,10));
+
+       var str = MayBe.of();
+       //var str = MayBe.of("Something");
+       var newStr = str.fmap(x=>x.toUpperCase())
+                      .fmap(x=>x.split(" ")[1]);
+       console.log("Str ", newStr);   
+    </script>
+</html>

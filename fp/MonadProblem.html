@@ -1,0 +1,21 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+       const Functor = {
+            of: value => ({
+                value: value,
+                inspect: () => `Functor(${value})`,
+                map: fn => Functor.of(fn(value))
+            })
+        };
+        const add1 = a => a + 1;
+        // we wrap Functor around the value 1
+        const myFunctor = Functor.of(Functor.of(1)); // Functor(1)
+        //console.log("MyFunctor.map ",myFunctor.map(x=>x+1));
+       
+        let arr = [1,2,3];
+        let arr2 = arr.flatMap(x=>[x]);
+        let arr3 = arr2.map(add1);
+        console.log('Arr2 ',arr3);
+    </script>
+</html>
