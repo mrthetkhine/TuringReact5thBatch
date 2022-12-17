@@ -1,0 +1,23 @@
+<html>
+    <script>
+        let obj = {
+            name : "Tk",
+            age : 38,
+        };
+
+        const isValidAge = (obj)=>age > 0 && age < 100; 
+        const min = limit=>value=> value < limit;      
+        const max = limit=> value=> value > limit;
+
+        const greaterThan0 = max(0);
+        const lessThan100 = min(100);
+        console.log("Min ", lessThan100(50));
+        console.log("Obj.age ", lessThan100(obj.age));
+        console.log("Obj.age >0 ", greaterThan0(obj.age));
+
+        const all = (...fns) => value=> fns.reduce((a,fn)=> a && fn(value) ,true); 
+
+        const valid = all(greaterThan0,lessThan100);
+        console.log("Valid ",valid(0));
+    </script>
+</html>

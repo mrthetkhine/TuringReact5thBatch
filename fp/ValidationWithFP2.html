@@ -1,0 +1,58 @@
+<html>
+    <script>
+        
+        let obj = {
+            name : "Tk",
+            age : 102,
+        };
+        const success = (value)=>{
+            return {
+                success : true,
+                errors : []
+            };
+        }
+        const failure = (value)=>{
+            return {
+                success : false,
+                errors : value
+            };;
+        }
+        const isValidAge = (obj)=>age > 0 && age < 100; 
+        const min = limit=>message=>value=> {
+            return value < limit? 
+                    success(true):
+                    failure([message]);
+        };      
+        const lessThan100 = min(100)('It should be less than 100');
+        console.log('lessThan100 30',lessThan100(30));
+        console.log('lessThan100 ',lessThan100(101));
+
+        const max = limit=>message=> value=> {
+            return value > limit? 
+                    success(true):
+                    failure([message]);
+        };      
+        const greaterThan0 = max(0)('It should be greater than 0');
+        console.log('Greater than 0 ',greaterThan0(20));
+
+        //Combine validator result
+        const accumulator=(a,b)=>{
+            return {
+                success : a.success && b.success,
+                errors : a.errors.concat(b.errors),
+            }
+        };
+        const validatorCompose=function (...validatorFunctions)
+        {
+            return function(value)
+            {
+                return validatorFunctions.reduce( (acc,fn)=>{
+                    let validatorResult = fn(value);
+                    return accumulator(acc,validatorResult);
+                },success(true));
+            }
+        }
+        const valid = validatorCompose(greaterThan0,lessThan100);
+        console.log('isValid ',valid(obj.age));
+    </script>
+</html>

@@ -1,0 +1,74 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+        
+        let obj = {
+            name : "Tk",
+            age : 23,
+            score : -30
+        };
+        const success = (value)=>{
+            return {
+                success : true,
+                errors : []
+            };
+        }
+        const failure = (value)=>{
+            return {
+                success : false,
+                errors : value
+            };;
+        }
+     
+        const min = limit=>message=>value=> {
+            return value < limit? 
+                    success(true):
+                    failure([message]);
+        };      
+        const max = limit=>message=> value=> {
+            return value > limit? 
+                    success(true):
+                    failure([message]);
+        };   
+        const lessThan100 = min(100)('It should be less than 100');
+        const greaterThan0 = max(0)('It should be greater than 0');
+
+        /*
+        const fieldLessThan100 = (propertyName)=> obj => lessThan100(R.prop(propertyName)(obj));
+        const fieldGreatherThan0 = (propertyName)=> obj => greaterThan0(R.prop(propertyName)(obj));
+        */
+        const validateFieldWithPredicate = propertyName=>predicateFun=> obj => predicateFun(R.prop(propertyName)(obj));
+        const validateAge = validateFieldWithPredicate('age');
+        fieldLessThan100 = validateAge(lessThan100);
+        fieldGreatherThan0 = validateAge(greaterThan0);
+        
+       
+        console.log('Field less than 100 ',fieldLessThan100(obj));
+        console.log('fieldGreatherThan0 ',fieldGreatherThan0(obj));
+        //console.log("R.prop ", R.prop('age')(obj));
+
+        const accumulator=(a,b)=>{
+            return {
+                success : a.success && b.success,
+                errors : a.errors.concat(b.errors),
+            }
+        };
+        const validatorCompose=function (...validatorFunctions)
+        {
+            return function(value)
+            {
+                return validatorFunctions.reduce( (acc,fn)=>{
+                    let validatorResult = fn(value);
+                    return accumulator(acc,validatorResult);
+                },success(true));
+            }
+        }
+        
+        const validateScore =validateFieldWithPredicate('score');
+    
+        const scoreGreaterThan0 = validateScore(greaterThan0);
+        const valid = validatorCompose(fieldLessThan100,fieldGreatherThan0,scoreGreaterThan0);
+        console.log("Valid ",valid(obj));
+        
+    </script>
+</html>

@@ -1,0 +1,58 @@
+<html>
+    <script>
+        /*
+        fetch('https://1jsonplaceholder.typicode.com/todos/1')
+        .then(response => response.json(),err=>(console.log("Err ",err),"Something went wrong"))
+        .then(json => console.log(json))
+        */
+        const Left = (value)=>({
+            map() {
+                return Left(value);
+            },
+            toString: () => `Left(${ value })`,
+            process(sucess,failure)
+            {
+                return Left(failure(value));
+            }
+        });
+        Left.of =(value) => Left(value);
+
+        const Right = (value)=>({
+            map(fn) {
+                return Right(fn(value));
+            },
+            toString: () => `Right(${ value })`,
+            process(sucess,failure)
+            {
+                return Right(sucess(value));
+            }
+        });
+        Right.of =(value) => Right(value);
+
+        const helloToGreetings = str => str.replace(/Hello/, 'Greetings,');
+        const leftHello  = Left('Hello world');
+        const rightHello = Right('Hello world');
+
+        leftHello.map(helloToGreetings)
+                .map(x=>console.log('Error case ',x));
+        rightHello.map(helloToGreetings)
+                  .map(x=>console.log('Success case ',x));
+
+        function div(a,b)
+        {
+            if(b == 0)
+            {
+                return Left('Division by zero')
+            }
+            return Right(a/b);
+        }      
+        div(10,2).map(x=>x * 2)
+                .map(x=>x+2)
+                //.map(x=>console.log(x))
+                .process(data=>console.log('Data is sucess ',data),error=>console.log("We got error ",error))
+        div(10,0).map(x=>x * 2)
+                .process(x=>console.log('Sucess ',x), x=>(console.log('Failure ',x),x))
+                .process(x=>console.log('Sucess callback ',x), err=>console.log('Another chain error ',err))
+                
+    </script>
+</html>
