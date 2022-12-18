@@ -1,0 +1,20 @@
+<html>
+    
+    <script>
+        
+        let Square = class { 
+            constructor(x) 
+            { 
+                this.area = x * x; 
+            } 
+        };
+        let square = new Square(10);
+        console.log('Area ',square.area);
+
+        let Another = Square;
+        let obj = new Another(20);
+        console.log('Obj ',obj);
+
+        console.log("Math ",Math.max(10,2));
+    </script>
+</html>

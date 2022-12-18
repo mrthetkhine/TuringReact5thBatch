@@ -1,0 +1,36 @@
+<html>
+    
+    <script>
+        
+        class Counter {
+            static noOfInstance =0 ;
+            constructor(start)
+            {
+                this.count = start;
+                Counter.noOfInstance ++;
+            }
+            incCount()
+            {
+                this.count ++;
+                
+            }
+            static inc()
+            {
+                Counter.noOfInstance ++;
+
+                //alert problem
+                this.count = 100;
+            }
+        }
+        let obj = new Counter(2);
+        let obj2 = new Counter(3);
+        console.log("obj.count ",obj.count);
+        console.log("obj2.count ",obj2.count);
+
+        obj.incCount();
+        obj2.incCount();
+        Counter.inc();
+        console.log("Obj .noOfInstance ",Counter.noOfInstance);
+        console.log("Counter.count",Counter.count);
+    </script>
+</html>

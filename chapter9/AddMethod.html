@@ -1,0 +1,27 @@
+<html>
+    
+    <script>
+        
+       
+        class Human 
+        {
+
+            constructor(name,age)
+            {
+                this.name = name;
+                this.age = age;
+            }
+           
+        }
+        
+        Human.prototype.work = function()
+        {
+            console.log(`Name ${this.name} age ${this.age} work`);
+        }
+        
+        let obj = new Human('TK',38);
+        //obj.#age = 200;
+        console.log('Obj ',obj);
+        obj.work();
+    </script>
+</html>

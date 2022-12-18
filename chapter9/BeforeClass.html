@@ -1,0 +1,23 @@
+<html>
+    
+    <script>
+        
+        function Human(name,age)
+        {
+            console.log('This.constructor ',this.constructor);
+            this.name = name;
+            this.age = age;
+
+            this.display = function()
+            {
+                console.log('Name ',this.name, " Age ",this.age);
+            }
+        }
+        let obj = new Human('Tk',38);
+        obj.display();
+        console.log("obj instance of Human ",obj instanceof Human);
+        console.log("obj instance of Object ",obj instanceof Object);
+        console.log("Human.prototype ",Human.prototype);
+        console.log("Human.constructor ",Human.constructor);
+    </script>
+</html>
