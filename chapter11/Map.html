@@ -1,0 +1,41 @@
+<html>
+    
+   <script>
+        let map = new Map([
+            ['name','TK'],
+            ['age',38],
+        ]);
+        console.log('Map ',map);
+
+        let obj = {
+            name : 'Tk',
+            age : 38,
+        };
+        map = new Map(Object.entries(obj));
+        console.log('Map ',map);
+
+        map.set("age",20);
+        console.log('Map ',map);
+        console.log('Map.size ',map.size);
+
+        console.log('Map.has("name") ',map.has("name"));
+        console.log('Map.get("name") ',map.get("name"));
+
+        /*
+        map.delete("age");
+        console.log('Map ',map);
+
+        map.clear();
+        console.log('Map ',map);
+        */
+       for(let [key,value] of map)
+       {
+        console.log('Key ',key, " value ",value);
+       }
+       console.log("Keys ", [...map.keys()]);
+       console.log("Values ", [...map.values()]);
+       console.log("Entries ", [...map.entries()]);
+
+       map.forEach((key,value)=>console.log("Key ",key, " value ",value));
+   </script>
+</html>

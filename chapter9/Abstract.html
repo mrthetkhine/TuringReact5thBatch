@@ -1,0 +1,22 @@
+<html>
+    
+    <script>
+        
+        class Human
+        {
+            work()
+            {
+                throw new Error('Cannot use abstract method');
+            }
+        }
+        class Teacher extends Human
+        {
+            work()
+            {
+                console.log('Human work');
+            }
+        }
+        let obj = new Teacher();
+        obj.work();
+    </script>
+</html>

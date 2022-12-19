@@ -1,0 +1,34 @@
+<html>
+    
+   <script>
+        let arr = [1,2,3,1,2,1];
+        let set = new Set(arr);
+        console.log('Set ',set);
+
+        let unique = new Set("Mississippi");
+        console.log('Unique ',unique);
+        console.log('Unique.size ',unique.size);
+        unique.add('k');
+        console.log('Unique ',unique);
+
+        unique.add('k');
+        console.log('Unique ',unique);
+
+        unique.delete('i');
+        console.log('Unique ',unique);
+
+        //unique.clear();
+        console.log('Unique ',unique);
+        console.log('Unique.has("M") ',unique.has("M"));
+        console.log('Unique.has("i") ',unique.has("i"));
+
+        for(const p of unique)
+        {
+            console.log('P ',p);
+        }
+
+        arr = [...unique];
+        console.log('Arr ',arr);
+        unique.forEach(ch=>console.log('Ch ',ch));
+   </script>
+</html>

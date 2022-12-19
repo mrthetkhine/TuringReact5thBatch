@@ -1,0 +1,32 @@
+<html>
+   <body>
+    <button type="button" id="btnAllocated">Allocated</button>
+    <button type="button" id="btnRemove">Assign Null</button>
+    <button type="button" id="btnThird">Assign to another</button>
+   </body> 
+   <script>
+    
+    let arr =[] ;
+    let k;
+    document.getElementById("btnAllocated").addEventListener("click",function()
+    {
+        console.log('Allocated');
+        arr =[] ;
+        for(let i=0;i<10000;i++)
+        {
+            arr.push( new Array(100_000_000));
+        }
+        
+    });
+    document.getElementById("btnRemove").addEventListener("click",function()
+    {
+       arr = null;
+       k = null; 
+    });
+    document.getElementById("btnThird").addEventListener("click",function()
+    {
+       k = arr;
+        
+    });
+   </script>
+</html>

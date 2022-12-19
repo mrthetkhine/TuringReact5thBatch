@@ -1,0 +1,13 @@
+<html>
+   
+   <script>
+    let bytes = new Uint8Array(1024); 
+    //let bytes = new Array(1024); 
+    let buffer = new ArrayBuffer(1024*1024);
+    let asbytes = new Uint8Array(buffer);
+    let asints = new Int32Array(buffer);
+
+    asints[0]= 100;
+    console.log('Buffer ',asbytes[0]);
+   </script>
+</html>
