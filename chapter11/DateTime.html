@@ -1,0 +1,19 @@
+<html>
+   
+   <script>
+
+    let now = new Date();
+    console.log('Current Date ',now);
+
+    console.log('Get Month ',now.getMonth());
+
+    let tomorrow = new Date(2023,0,2);
+    console.log('Tomorrow ',tomorrow);
+
+    console.log('GetTime ',tomorrow.getTime());
+
+    let time = tomorrow.getTime();
+    let another = new Date(time);
+    console.log('Another ',another);
+   </script>
+</html>

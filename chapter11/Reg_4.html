@@ -1,0 +1,18 @@
+<html>
+   
+   <script>
+
+
+    console.log('/\d+/.test 1233 ', /\d+/.test('12233'));
+    console.log('1233.match(\/d+\) ', '122334Hello'.match(/\d+/));
+
+    console.log('/\d*/.test 1233 ', /\d*/.test('12233'));
+    console.log('/\d*/.test hello ', /\d*/.test('hello'));
+
+    console.log('/\d?/.test 1233 ', /\d?/.test('12233'));
+    console.log('1233.match(\/d?\) ', '122334Hello'.match(/\d?/g));
+
+    console.log('/\d{3}/.test 1233 ', /\d{3}/.test('12233'));
+    console.log('122334Hello.match(\/d{3}\) ', '122334Hello'.match(/\d{3}/g));
+   </script>
+</html>

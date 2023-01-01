@@ -1,0 +1,14 @@
+<html>
+   
+   <script>
+
+    //username
+    function isValidEmail (email){
+        let emailReg = /(\w+)@([\w.]+)/;
+        return emailReg.test(email);
+    }
+    console.log('some@gmail.com ',isValidEmail('some@gmail.com'));
+    console.log('@gmail.com ',isValidEmail('@gmail.com'));
+    console.log('1@gmail.com ',isValidEmail('1@gmail.com'));
+   </script>
+</html>

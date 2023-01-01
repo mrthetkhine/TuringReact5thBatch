@@ -1,0 +1,33 @@
+<html>
+   
+   <script>
+    let reg = /\d/;
+
+    console.log('/\d/.test ', reg.test('1234'));
+    console.log('/\d/.test hello ', reg.test('hello'));
+
+    let phoneNoReg = /\d{9,}/;
+    console.log('/\d+/.test 1223456789Hello ', phoneNoReg.test('1223456789Hello'));
+    console.log('/\d+/.test 1223456789Hello ', '1223456789Hello'.match(phoneNoReg));
+
+    console.log('/abc/.test abcdef ', /abc/.test('abcdef'));
+    console.log('/abc/i.test ABCDEF ', /abc/i.test('ABCDEF'));
+    console.log('/abc/.test abdef ', /abc/.test('abcdef'));
+
+    console.log('/[a-z]/.test abdef ', /[a-z]/.test('abcdef'));
+    console.log('/[a-z]/.test 1223 ', /[a-z]/.test('1223'));
+
+    console.log('/[def]/.test abc ', /[def]/.test('abc'));
+
+    console.log('/[^def]/.test abc ', /[^def]/.test('abc'));
+
+    console.log('/abc./.test abcd ', /abc./.test('abcd'));
+    console.log('/abc./.test abcf ', /abc./.test('abcf'));
+
+    console.log('/[0-9]/.test 123FEA ', /[0-9]/.test('123FEA'));
+    console.log('/[0-9]/.test hello ', /[0-9]/.test('hello'));
+
+    console.log('/\D/.test hello ', /\D/.test('hello'));
+    console.log('/hello/.match(/\D/) ', 'hello'.match(/\D/g));
+   </script>
+</html>

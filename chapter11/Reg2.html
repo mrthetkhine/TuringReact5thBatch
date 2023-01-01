@@ -1,0 +1,41 @@
+<html>
+   
+   <script>
+
+
+    console.log('/\w/.test abcdef ', /\w/.test('abcdef'));
+    console.log('/\w/.test 122 ', /\w/.test('122'));
+
+    console.log('/\s/.test 122 ', /\s/.test('122'));
+    console.log('/\s/.test \r ', /\s/.test(' '));
+    console.log('/\S/.test \r ', /\S/.test(' '));
+
+    console.log('/ab|cd/.test ab', /ab|bc/.test('ab'));
+    console.log('/ab|cd/.test none', /ab|bc/.test('none'));
+
+    console.log('/^Java/.test JavaScript', /^Java/.test('JavaScript'));
+    console.log('/^Java/.test Java', /^Java/.test('Java'));
+    console.log('/^Java/.test Python', /^Java/.test('Python'));
+    console.log('/^Java/.test Some Java', /^Java/.test('Some Java'));
+
+    console.log('/programming$/.test JavaScript Programming', /programming$/.test('JavaScript programming'));
+
+    console.log('/\bm/.test moon', /\bm/.test('moon'));
+    console.log('/\bm/.test oom', /\bm/.test('oom'));
+
+    console.log('/Java(?=Script)/.test JavaScript', /Java(?=Script)/.test('JavaScript'));
+    console.log('/Java(?=Script)/.test JavaProgram', /Java(?=Script)/.test('JavaProgram'));
+    console.log('JavaScript.match /Java(?=Script)/','JavaScript'.match(/Java(?=Script)/));
+
+    console.log('/Java(?!Script)/.test JavaScript', /Java(?!Script)/.test('JavaScript'));
+    console.log('/Java(?!Script)/.test JavaProgram', /Java(?!Script)/.test('JavaProgram'));
+
+    console.log('/(?<=Java)Script/.test JavaScript', /(?<=Java)Script/.test('JavaScript'));
+    console.log('JavaScript.match /(?<=Java)Script/','JavaScript'.match(/(?<=Java)Script/));
+    console.log('PythonScript.match /(?<=Java)Script/','PythonScript'.match(/(?<=Java)Script/));
+
+    console.log('/(?<!Java)Script/.test JavaScript', /(?<!Java)Script/.test('JavaScript'));
+    console.log('JavaScript.match /(?<!Java)Script/','JavaScript'.match(/(?<!Java)Script/));
+    console.log('PythonScript.match /(?<!Java)Script/','PythonScript'.match(/(?<!Java)Script/));
+   </script>
+</html>
