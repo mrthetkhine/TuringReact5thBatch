@@ -1,0 +1,39 @@
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" ></script>
+   <script>
+
+     let obj = {
+          name :'TK',
+          age : 38,
+          hello:function()
+          {
+            console.log('My name is ',this.name);
+          } 
+     };
+     //Serialization
+     let str = JSON.stringify(obj);
+     console.log('Str ',str);
+
+     //Deserialization
+     let obj2 = Object.assign(obj,JSON.parse(str) ) ;
+     console.log('Obj2 ',obj2);
+     obj2.hello();
+
+     let obj3 = {
+        userName : 'admin',
+        password : 'somethingelse',
+        secrtes: '22333',
+        toJSON : function()
+        {
+            console.log('toJSON called');
+            let that = this;
+            return {
+                name : that.userName,
+                additionalData : "Additional data"
+            }
+        }
+     };
+     let str2 = JSON.stringify(obj3);
+     console.log('Str2 ',str2);
+   </script>
+</html>

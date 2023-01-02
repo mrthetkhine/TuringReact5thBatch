@@ -1,0 +1,25 @@
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" ></script>
+   <div>
+        <div id="lblTime">
+            Something
+        </div>
+        <button type="button" id="stopTimer">
+            Stop
+        </button>
+   </div>
+   <script>
+
+        let divTime = document.getElementById('lblTime');
+        function showTime()
+        {
+            console.log('Show time');
+            divTime.innerHTML = moment(new Date()).format("hh:mm:ss");
+        }
+        let timer = setInterval(showTime,1000);
+        
+        document.getElementById('stopTimer').addEventListener('click',()=>{
+            clearInterval(timer);
+        });
+   </script>
+</html>

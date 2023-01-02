@@ -1,0 +1,21 @@
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" ></script>
+   <div>
+        <div id="lblTime">
+            Something
+        </div>
+   </div>
+   <script>
+
+        let divTime = document.getElementById('lblTime');
+        function showTime()
+        {
+            console.log('Show time');
+            divTime.innerHTML = moment(new Date()).format("hh:mm:ss");
+        }
+        
+        setTimeout(showTime,1000);
+        
+        
+   </script>
+</html>

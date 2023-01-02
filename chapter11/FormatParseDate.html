@@ -1,0 +1,20 @@
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" ></script>
+   <script>
+
+    let now = new moment(new Date());
+    let tomorrow = new moment(new Date(2023,0,3));
+   
+    let day = tomorrow.diff(now,'day');
+    console.log('Different ',day);
+
+    let sevenDayAfterToday = now.day(7);
+    console.log('Next 7 day ',sevenDayAfterToday.toDate());
+
+    console.log('Format ',sevenDayAfterToday.format('MMM Do YYYY, h:mm:ss a'));
+
+    let str = '12/25/1995';
+    let momentDate = moment(str,"MM-DD-YYYY");
+    console.log('Moment parse date ',momentDate.toDate())
+   </script>
+</html>

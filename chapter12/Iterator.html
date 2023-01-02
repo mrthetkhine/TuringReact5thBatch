@@ -1,0 +1,22 @@
+<html>
+    
+  
+   <script>
+
+    let arr = [1,2,3,4];
+    for(let element of arr)
+    {
+        console.log('Element ',element);
+    }
+
+    let iterable = [99];
+    let iterator = iterable[Symbol.iterator]();
+    console.log('Iterator ',iterator);
+    for(let result = iterator.next(); 
+            !result.done; 
+            result = iterator.next()) 
+            {
+        console.log(result) // result.value == 99 
+    }
+   </script>
+</html>

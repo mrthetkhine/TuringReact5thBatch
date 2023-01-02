@@ -1,0 +1,29 @@
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" ></script>
+   <script>
+
+     let address = ['Yangon','Manday'];
+     let obj = {
+          name :'TK',
+          age : 38,
+          address
+     };
+
+     let obj2 = {...obj};
+     /*
+        for(key value)
+        {
+            clone[key] = value
+        }
+     */
+     obj2.address.push('Somewhere');
+
+     console.log('Obj ',obj);
+
+     let obj3 = JSON.parse( JSON.stringify(obj2));
+     obj3.address.push('Anywhere');
+
+     console.log('Obj2 ',obj2);
+     console.log('Obj3 ',obj3);
+   </script>
+</html>

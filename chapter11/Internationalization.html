@@ -1,0 +1,18 @@
+<html>
+   
+   <script>
+    let pounds = Intl.NumberFormat("en", {style: "currency", currency: "GBP"});
+    console.log ('Pound ',pounds.format(1000));
+    let data = [0.05, .75, 1];
+    let formatData = Intl.NumberFormat(undefined, {
+        style: "percent",
+        minimumFractionDigits: 1,
+        maximumFractionDigits: 1
+    }).format;
+
+    console.log('Format ',data.map(formatData));
+
+    let now = new Date();
+    console.log('Locale Date String ',now.toLocaleDateString());
+   </script>
+</html>

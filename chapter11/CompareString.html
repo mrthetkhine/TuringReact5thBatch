@@ -1,0 +1,26 @@
+<html>
+   
+   <script>
+    let str1 = 'apple';
+    let str2 = 'orange';
+
+    console.log('LocaleCompare ', str1.localeCompare(str2));
+
+    let objArr = [
+        {
+            name : 'Apple',
+            unit : 10
+        },
+        {
+            name : 'Flower',
+            unit : 5,
+        },
+        {
+            name : 'banana',
+            unit : 15,
+        }
+    ];
+    objArr.sort((a,b)=> a.name.localeCompare(b.name));
+    console.log('ObjArr ',objArr);
+   </script>
+</html>
