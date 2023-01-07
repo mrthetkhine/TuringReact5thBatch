@@ -1,0 +1,35 @@
+<html>
+    
+  
+   <script>
+
+    function* generator()
+    {
+        yield 1;
+        yield 2;
+        yield 3;
+        return 100;
+    }
+    let gen = generator();
+    console.log('Gen ',gen.next());
+    console.log('Gen ',gen.next());
+    console.log('Gen ',gen.next());
+    console.log('Gen ',gen.next());
+
+    for(let k of generator())
+    {
+        console.log('K ',k);
+    }
+    function* range(start,end)
+    {
+        for(let i=start; i<=end; i++)
+        {
+            yield i;
+        }
+    }
+    for(let i of range(1,5))
+    {
+        console.log("I is ",i);
+    }
+   </script>
+</html>

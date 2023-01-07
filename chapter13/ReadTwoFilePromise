@@ -1,0 +1,10 @@
+const fs = require('fs');
+fs.promises.readFile('filename.txt')
+    .then(data=>fs.promises.readFile(data))
+    .then(content=> content.toString())
+    .then(content=>console.log('Content ',content.length))
+
+fs.promises.readFile('somethingelse.txt')
+            .then(
+                    data=> console.log('Success case '), 
+                    (err)=>console.log('Error case ',err))

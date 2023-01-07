@@ -1,0 +1,12 @@
+<html>
+    <script>
+        
+    Promise.allSettled([Promise.resolve(1), Promise.reject(2),3])
+        .then(data=>console.log(data));
+        
+        /*
+        Promise.all([Promise.resolve(1), Promise.reject(2),3])
+        .then(data=>console.log(data));
+        */
+</script>
+</html>

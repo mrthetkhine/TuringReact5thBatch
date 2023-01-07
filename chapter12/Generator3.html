@@ -1,0 +1,25 @@
+<html>
+    
+  
+   <script>
+
+    function* generator()
+    {
+        let y1 = yield 1;
+        console.log('Next with parameter ',y1);
+        let y2 = yield 2;
+        console.log('Next with parameter ',y2);
+        let y3 = yield 3;
+        console.log('Next with parameter ',y3);
+        return 100;
+    }
+    let gen = generator();
+    let a = gen.next('One');
+    console.log('A ',a);
+    let b = gen.next('Two');
+    console.log('b ',b);
+
+    console.log(gen.next('Three'));
+    console.log(gen.next('Four'));
+   </script>
+</html>
