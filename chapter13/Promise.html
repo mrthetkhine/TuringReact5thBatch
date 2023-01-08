@@ -1,0 +1,27 @@
+<html>
+    <script>
+        let success = Promise.resolve(100);
+        success.then(data=>console.log('Data ',data))
+
+        let fail = Promise.reject('something goes wrong');
+        fail.then(data=>console.log('Fail case success ',data), (err)=>console.log("Faile error ",err));
+
+        function div(a,b)
+        {
+            if( b == 0)
+            {
+                return Promise.reject(new Error('divisor is zero'))
+            }
+            else
+            {
+                return Promise.resolve(a/b);
+            }
+        }
+        div(10,2)
+            .then(data=> data+1)
+            .then(data=>console.log('Data ',data));
+        div(10,0)
+            .then(data=> data+1,err=>console.log('Error ',err))
+        
+    </script>
+</html>

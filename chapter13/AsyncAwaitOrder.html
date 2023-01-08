@@ -1,0 +1,33 @@
+<html>
+    <script>
+
+        async function getDataTwo()
+        {
+            console.log('GetData2');
+            let response = await fetch('https://jsonplaceholder.typicode.com/todos/3');
+            let json =  await response.json();
+            console.log('getDataTwo JSON ',json);
+        }
+        async function getData()
+        {
+            /*
+            fetch(todo1)
+                .then( fetch(todo2))
+            */
+            console.log('GetData');
+
+            let response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+            let response2 = await fetch('https://jsonplaceholder.typicode.com/todos/2');
+            let json =  await response.json();
+            let json2 = await response2.json();
+            console.log('JSON ',json, ' JSON 2',json2);
+        }
+        console.log('Before Get data');
+        getData();
+        getDataTwo();
+        console.log('After Get data');
+
+        
+        
+    </script>
+</html>

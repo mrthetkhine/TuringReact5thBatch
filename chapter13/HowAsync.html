@@ -1,0 +1,32 @@
+<html>
+    <script>
+
+       function getDataTwo()
+       {
+         return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                console.log('Get data2 returned ');
+                resolve(20);
+            },1000);
+         }); 
+       }
+       async function getData()
+       {
+            let dataTwo = await getDataTwo();
+            return 100+dataTwo;
+       }
+       function normal()
+       {
+        return 500;
+       }
+       async function fun2()
+       {
+        let data = await getData();
+        return data + 200;
+       }
+       fun2()
+        .then(data=>console.log('Data ',data));
+
+        
+    </script>
+</html>

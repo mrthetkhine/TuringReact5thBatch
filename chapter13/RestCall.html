@@ -1,0 +1,31 @@
+<html>
+    <script>
+        function fetchUrl(url)
+        {
+            return new Promise((resolve,reject)=>{
+                let httpRequest = new XMLHttpRequest();
+                httpRequest.open('GET',url);
+                httpRequest.send();
+
+                httpRequest.onreadystatechange = function()
+                {
+                    console.log('Ready state change event ',httpRequest.readyState);
+                    if( httpRequest.readyState ===  XMLHttpRequest.DONE)
+                    {
+                        console.log('Done ',httpRequest.responseText);
+                        resolve(httpRequest)
+                    }
+                }
+            });
+            
+        }
+
+        
+        fetchUrl('https://jsonplaceholder.typicode.com/todos/1')
+            .then(response=>response.responseText)
+            .then(text=>JSON.parse(text))
+            .then(json=>console.log("JSON ",json));
+        Promise.resolve('Hello')
+                .then(data=>console.log('Data ',data));
+    </script>
+</html>

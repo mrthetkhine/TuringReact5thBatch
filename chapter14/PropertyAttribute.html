@@ -1,0 +1,16 @@
+<html>
+    <script>
+
+        const object1 = {};
+
+        Object.defineProperty(object1, 'age', {
+            value: 42,
+            writable: false
+        });
+
+        object1.age = 77;
+        // Throws an error in strict mode
+
+        console.log(object1.age);
+    </script>
+</html>

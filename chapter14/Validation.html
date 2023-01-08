@@ -1,0 +1,31 @@
+<html>
+    <script>
+
+        let obj = {
+            name : "TK",
+            age :null
+        };
+        let another = {
+            address : 'Something',
+            otherFiled: null,
+        }
+       
+        function validate(obj)
+        {
+            let errors = [];
+            for(let p in obj)
+            {
+                if( obj[p] ===null)
+                {
+                    errors.push('Property '+p+' is null');
+                } 
+            }
+            return errors;
+        }
+        let err = validate(obj);
+        console.log('Err ',err);
+
+        err = validate(another);
+        console.log('Err ',err);
+    </script>
+</html>
