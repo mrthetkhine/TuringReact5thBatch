@@ -1,0 +1,38 @@
+<html>
+    <body>
+      
+    </body>
+    <script>
+        let module = (function ()
+        {
+            return {
+                method1()
+                {
+                    console.log('Method 1 ');
+                },
+                method2()
+                {
+                    console.log('Method 2 ');
+                },
+            };
+        })();
+        console.log('Module ',module);
+        module.method1();
+
+        let proxyModule =new Proxy (module,{
+            get(target, prop, receiver) {
+                //console.log('Get ');
+                //console.log('Target ',target, "Property ",prop, " Receiver",receiver);
+
+                if(typeof target[prop] =='function')
+                {
+                    console.log('Log Method ',prop, ' Invoked');
+                }
+                return target[prop];
+            },
+        });
+        //console.log('Proxy ',proxyModule.method1);
+        proxyModule.method1();
+        proxyModule.method2();
+    </script>
+</html>

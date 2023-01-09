@@ -1,0 +1,41 @@
+<html>
+   
+    <script>
+
+        let obj = {
+            name : 'Tk',
+            display()
+            {
+                console.log('Name is ',this.name);
+            }
+        };
+        let  dis = obj.display;
+        Reflect.apply(dis,obj,[]);
+
+        class Circle
+        {
+            constructor()
+            {
+                console.log('Circle');
+            }
+        }
+        class Rectangle
+        {
+            constructor()
+            {
+                console.log('Rectangle');
+            }
+        }
+        let shape = Reflect.construct(Circle,[]);
+        console.log('Shape ',shape);
+
+       console.log('Own property decriptor ',Object.getOwnPropertyDescriptors(obj)); 
+       let parent = {
+        x : 10
+       };
+       let child = Object.create(parent);
+       child.name = "Something";
+       console.log('GetOwnProperty ',Object.getOwnPropertyNames(child));
+       console.log('HasOwnKey ',Reflect.ownKeys(child));
+    </script>
+</html>

@@ -1,0 +1,60 @@
+<html>
+    <body>
+        Name 
+        <span id="userName">
+           
+        </span>
+        <hr/>
+        Age <span id="userAge">
+
+        </span>
+
+    </body>
+    <script>
+
+        let obj = {
+            name : 'TK',
+            age : 38
+        };
+
+        function render(obj)
+        {
+            //console.log('Render with ',obj);
+            document.getElementById('userName').innerText = obj.name;
+            document.getElementById('userAge').innerText = obj.age;
+        }
+        render(obj);
+
+        function mvc(model,callback)
+        {
+            let newModel = {};
+            for(let prop in model)
+            {
+                Object.defineProperty(newModel, "__"+prop, {
+                    value : model[prop],
+                    writable:true,
+                });
+                Object.defineProperty(newModel,prop, {
+                    get ()
+                    {
+                        //console.log('Getter ',prop);
+                        return newModel["__"+prop];
+                    },
+                    set(value)
+                    {
+                        //console.log('Setter ',prop, ' value ',value);
+                        newModel["__"+prop] = value;
+                        callback(newModel);
+                    }
+                });
+            }
+            return newModel;
+        }
+        let mvcModel = mvc(obj,render);
+        console.log('mvcModel ',mvcModel);
+        mvcModel.name = "Change";
+        console.log('Mvc model ',mvcModel);
+
+        mvcModel.age = 200;
+    </script>
+</html>

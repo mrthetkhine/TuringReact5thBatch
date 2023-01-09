@@ -1,0 +1,27 @@
+<html>
+   
+    <script>
+
+        let obj = {
+            name : 'TK',
+            age : 38
+        };
+        Object.seal(obj);
+
+        obj.something = 'Hello';
+        obj.name = 'Change';
+        
+        console.log('Obj ',obj);
+        console.log('Obj isSealed ',Object.isSealed(obj));
+
+        Object.freeze(obj);
+        obj.name = 'Change2';
+        console.log('Obj ',obj);
+
+        console.log('Get Prototype ',Object.getPrototypeOf(obj));
+
+        let p = {x: 1};
+        let o = Object.create(p);
+        console.log('Get Prototype ',Object.getPrototypeOf(o));
+    </script>
+</html>

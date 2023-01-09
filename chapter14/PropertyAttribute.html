@@ -1,16 +1,33 @@
 <html>
     <script>
 
-        const object1 = {};
+        const object1 = {
+            name : 'Tk'
+        };
 
         Object.defineProperty(object1, 'age', {
             value: 42,
-            writable: false
+            writable: false,
+            enumerable:true,
+            configurable:false,
         });
 
         object1.age = 77;
         // Throws an error in strict mode
 
+        delete object1.age;
         console.log(object1.age);
+
+        for(let p in object1)
+        {
+            console.log('Property ',p);
+        }
+        Object.defineProperty(object1, 'address', {
+            get ()
+            {
+                return "SomeWhere"
+            }
+        });
+        console.log('Object1 .address ',object1.address);
     </script>
 </html>

@@ -1,0 +1,71 @@
+<html>
+    <style>
+        #clock
+        {
+            color:blue;
+            background: black;
+        }
+        input[type="button"]{
+            background: blue;
+        } 
+
+        span,h2{
+            background: gray;
+        }
+        div span{
+            background: orange;
+        }
+        div > span{
+            background: blue;
+        }
+        span ~ h3
+        {
+            background-color: aqua;
+        }
+        span + h3
+        {
+            background-color: red;
+        }
+    </style>
+    <body>
+       Clock <span id="clock">Hello</span>
+       <input type="text"></input>
+       <input type="button" value="Button"></input>
+       <input type="button" value="Button2"></input>
+
+       <span> Span two</span>
+
+       <h3> This is h3</h3>
+       <h2> This is h2</h2>
+
+       <div>
+        Parent div
+            <p>
+                <span> Span under div</span>
+            </p>
+            
+       </div>
+       <div>
+        Second div parent
+            <span>Direct span of div</span>
+       </div>
+       <div>
+            <span>
+                span
+            </span>
+            <div>
+                Another 
+            </div>
+            <h3>
+                H3 sibling of span
+            </h3>
+            <span>
+                Sibling 2
+            </span>
+            <h3>
+                Adjacent h3
+            </h3>
+       </div>
+    </body>
+   
+</html>

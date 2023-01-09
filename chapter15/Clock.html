@@ -1,0 +1,15 @@
+<html>
+    <body>
+       Clock <span id="clock"></span>
+    </body>
+    <script>
+
+        function showTime()
+        {
+            let date = new Date().toLocaleDateString();
+            document.querySelector("#clock").innerText = date;
+
+        }
+        showTime();
+    </script>
+</html>
