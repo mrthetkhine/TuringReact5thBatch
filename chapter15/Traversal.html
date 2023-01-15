@@ -1,0 +1,28 @@
+<html>
+    
+    <body>
+           
+          <div id="parent">
+            Parent
+            <div id="child">
+                Child
+              </div>
+          </div>
+          <div>
+            Another sibling
+          </div>
+    </body>
+
+    <script>
+        console.log('document.body.children ',document.body.children);
+
+        let child = document.getElementById("child");
+        let parent = child.parentNode;
+        console.log('Parent Node ',parent);
+
+        console.log('document.body.firstElementChild ',document.body.firstElementChild);
+        console.log('document.body.lastElementChild ',document.body.lastElementChild);
+
+        console.log("Parent sibling ",parent.nextElementSibling);
+    </script>
+</html>

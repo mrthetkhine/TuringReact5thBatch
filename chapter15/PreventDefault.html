@@ -1,0 +1,35 @@
+<html>
+    <style>
+        #parent
+        {
+            background: blue;
+        }
+        #child
+        {
+            background: gray;
+        }
+    </style>
+    <body>
+          
+            <div id="parent">
+                Parent
+                <div id="child">
+                    Child
+                </div>
+            </div>
+    </body>
+
+    <script>
+       
+    
+     
+     document.body.addEventListener('contextmenu',function(e)
+     {
+        console.log('body right click ',e);
+        console.log('is body click ', this==e.target);
+        e.preventDefault();
+     });
+     
+
+    </script>
+</html>

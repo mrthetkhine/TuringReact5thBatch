@@ -1,0 +1,21 @@
+<html>
+    <body>
+        <div id="title">Div </div>
+    </body>
+    <script src="./script3.js" async>
+       
+    </script>
+    <script src="./script1.js">
+       
+    </script>
+    <script>
+        window.onerror = function(err)
+        {
+            console.log('This can catch any error on js');
+        }
+        console.log('Script 2');
+        document.getElementById("title").style.color = 'green';
+
+        console.log('Window ',window.something);
+    </script>
+</html>

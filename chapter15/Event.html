@@ -1,0 +1,60 @@
+<html>
+    <style>
+        #parent
+        {
+            background: blue;
+        }
+        #child
+        {
+            background: gray;
+        }
+    </style>
+    <body>
+            <button type="button" id="btnClickMe">
+                Click me
+            </button>
+            <div id="parent">
+                Parent
+                <div id="child">
+                    Child
+                </div>
+            </div>
+    </body>
+
+    <script>
+       
+    
+     document.querySelector('#btnClickMe').addEventListener("click",function(event)
+     {
+        console.log('Click event ',event);
+
+        document.getElementById('parent').removeEventListener('click',parentClickHandler);
+
+     })
+     document.body.addEventListener('click',function(e)
+     {
+        console.log('body click ',e);
+        console.log('is body click ', this==e.target);
+     });
+     let parentClickHandler = function(e){
+        console.log('Parent click ',e);
+        console.log('is parent click ', this==e.target);
+     };
+     document.getElementById('parent').addEventListener('click',parentClickHandler);
+     document.getElementById('child').addEventListener('click',function(e){
+        console.log('Child click ',e);
+        //console.log("Child dom ",this, "target ",e.target)
+        console.log('is child click ', this==e.target);
+
+       //e.stopPropagation();
+       e.stopImmediatePropagation();
+     });
+     let bodyClickHandler = function(e){
+        console.log('Child click2 ',e);
+      
+     };
+     document.getElementById('child').addEventListener('click',bodyClickHandler);
+
+
+    </script>
+</html>

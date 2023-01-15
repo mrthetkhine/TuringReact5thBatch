@@ -1,0 +1,44 @@
+<html>
+    
+    <style>
+        .class-one
+        {
+            background:blue;
+        }
+        .class-two
+        {
+            color:brown;
+        }
+    </style>
+    <body >
+           
+        <h2 id="title" data-section-number="16.1">Attributes</h2>
+        <div id="container">
+            Container
+        </div>
+    </body>
+
+    <script>
+       
+
+      
+
+        let container = document.getElementById('container');
+
+        let div = document.createElement('div');
+        div.textContent = 'Another div child';
+        container.appendChild(div);
+
+        let h1 = document.createElement('h1');
+        h1.textContent = "Prepend";
+        container.prepend(h1);
+
+        let span = document.createElement('span');
+        span.textContent = 'before';
+        container.before(span);
+
+        let afterSpan = document.createElement('span');
+        afterSpan.textContent = 'After';
+        container.after(afterSpan);
+    </script>
+</html>

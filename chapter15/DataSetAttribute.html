@@ -1,0 +1,34 @@
+<html>
+    
+    <style>
+        .class-one
+        {
+            background:blue;
+        }
+        .class-two
+        {
+            color:brown;
+        }
+    </style>
+    <body >
+           
+        <h2 id="title" data-section-number="16.1">Attributes</h2>
+        <div id="container">
+            Container
+        </div>
+    </body>
+
+    <script>
+       
+
+        let title = document.getElementById("title");
+        let sectionNo = title.dataset.sectionNumber;
+        console.log('Section No ',sectionNo);
+
+        let container = document.getElementById('container');
+        //container.innerHTML = "<h1>Change</h1>";
+        //container.innerText = "<h1>Change</h1>";
+
+        container.textContent = "<h1>Change</h1>";
+    </script>
+</html>

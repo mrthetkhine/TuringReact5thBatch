@@ -1,0 +1,45 @@
+<html>
+    
+    <style>
+        .class-one
+        {
+            background:blue;
+        }
+        .class-two
+        {
+            color:brown;
+        }
+    </style>
+    <body >
+           
+          <a id="lnkGoogle" href="http://www.google.com">
+            Google
+            </a>
+            <button type="button" id="btnAdd">
+                Add Class
+            </button>
+            <div id="container" class="class-one">
+                Container
+            </div>
+    </body>
+
+    <script>
+       
+
+        let google = document.getElementById("lnkGoogle");
+        let href = google.getAttribute('href');
+        console.log('Href ',href);
+        console.log('has Attribute ',google.hasAttribute('href'));
+
+        google.setAttribute('href','http://www.yahoo.com');
+
+        let container = document.getElementById("container");
+        let classList = container.classList;
+        console.log('ClassList ',classList)
+
+        document.getElementById("btnAdd").addEventListener("click",function()
+        {
+            classList.add('class-two');
+        })
+    </script>
+</html>

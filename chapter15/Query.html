@@ -1,0 +1,36 @@
+<html>
+    <style>
+        #parent
+        {
+            background: blue;
+        }
+        #child
+        {
+            background: gray;
+        }
+    </style>
+    <body>
+            <button type="button" id="btnClickMe">
+                Click me
+            </button>
+            <div id="parent" name="green">
+                Parent
+               
+            </div>
+            <div class="someclass">
+                Div with some class
+            </div>
+            <div class="someclass">
+               Another Div with some class
+            </div>
+    </body>
+
+    <script>
+       
+       
+        console.log('Query Selector ',document.querySelector(".someclass")); 
+        console.log('Query Selector All',document.querySelectorAll(".someclass")); 
+        console.log('Query document.getElementsByName',document.getElementsByName("green"));   
+        console.log('Query document.getElementsByTagName',document.getElementsByTagName("div"));   
+    </script>
+</html>

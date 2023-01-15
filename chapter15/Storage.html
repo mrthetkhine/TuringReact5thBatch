@@ -1,0 +1,26 @@
+<html>
+    
+    <style>
+       
+    </style>
+    <body >
+           
+      
+    </body>
+
+    <script>
+        let name = localStorage.username;
+        console.log('Name ',name);
+        if(!name)
+        {
+            name = prompt("Enter your name");
+            localStorage.username = name;
+        }
+
+        let account = sessionStorage.account;
+        if(!account)
+        {
+            sessionStorage.account  = prompt("Enter account");
+        }
+    </script>
+</html>

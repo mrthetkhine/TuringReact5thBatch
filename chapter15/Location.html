@@ -1,0 +1,29 @@
+<html>
+    
+    <style>
+        #container
+        {
+            background:blue;
+        }
+        .class-two
+        {
+            color:brown;
+        }
+    </style>
+    <body >
+           
+        <h2 id="title" data-section-number="16.1">Attributes</h2>
+        
+        <button type="button" id="btnUp">Go</button>
+    </body>
+
+    <script>
+       console.log('Location ',window.location);
+       document.getElementById("btnUp").addEventListener("click",(e)=>{
+        window.location = 'http://www.google.com'
+    });
+    window.addEventListener("hashchange",(e)=>{
+        console.log('Event ',e);
+    })
+    </script>
+</html>

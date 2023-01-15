@@ -1,0 +1,27 @@
+<html>
+    
+    <body>
+           
+            <div class="someclass">
+                Div with some class
+            </div>
+            <div class="someclass">
+               Another Div with some class
+            </div>
+    </body>
+
+    <script>
+       
+       
+        let nodes =  document.getElementsByTagName("div");
+        console.log('Nodes ',nodes);
+        for(let i=0,len = nodes.length;i< len;i++)
+        {
+            let node = nodes[i];
+            console.log('Node ',node);
+            let divNode = document.createElement("div");
+            document.body.append(divNode);
+        }  
+        console.log('ByClassName ',document.getElementsByClassName("someclass"));
+    </script>
+</html>

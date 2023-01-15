@@ -1,0 +1,188 @@
+<html>
+    
+    <style>
+        #container
+        {
+            background:blue;
+        }
+        .class-two
+        {
+            color:brown;
+        }
+    </style>
+    <body >
+           
+        <h2 id="title" data-section-number="16.1">Attributes</h2>
+        <div id="container">
+            Container
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+
+        </div>
+        <div>
+            End of page
+        </div>
+        <button type="button" id="btnUp">Up</button>
+    </body>
+
+    <script>
+       
+
+      
+
+        let container = document.getElementById('container');
+        console.log('Bounding rect ',container.getBoundingClientRect());
+        console.log('Contianer left',container.clientLeft, ' top ',container.clientTop);
+        console.log('Contianer left',container.offsetLeft, ' top ',container.offsetTop);
+        document.body.addEventListener("click",(event)=>{
+            let element  = document.elementFromPoint(event.clientX,event.clientY);
+            console.log('Element ',element);
+        });
+        btnUp.addEventListener("click",(e)=>{
+            //window.scrollTo(0,0);
+            setInterval(() => { scrollBy(0,-50)}, 500);
+        });
+    </script>
+</html>
