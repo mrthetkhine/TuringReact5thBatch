@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <script>
+
+   let worker1 = new Worker('worker.js');
+   worker1.postMessage(['Hello from browser']);
+   worker1.addEventListener('message',event=>{
+    console.log("Message received from main ",event.data);
+   });
+
+   let worker2 = new Worker('fworker.js');
+   worker2.postMessage(6);
+   worker2.addEventListener('message',event=>{
+    console.log("Message received from factorial  ",event.data);
+   });
+  </script>
+</head>
+</html>

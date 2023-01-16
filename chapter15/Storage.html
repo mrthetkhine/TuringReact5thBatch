@@ -9,6 +9,9 @@
     </body>
 
     <script>
+        window.addEventListener("storage",function(event){
+            console.log('Storage event ',event);
+        });
         let name = localStorage.username;
         console.log('Name ',name);
         if(!name)
@@ -22,5 +25,7 @@
         {
             sessionStorage.account  = prompt("Enter account");
         }
+
+        
     </script>
 </html>
