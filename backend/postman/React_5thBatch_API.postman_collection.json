@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "8ecb18eb-45d0-4baf-9b8e-444118971234",
+		"name": "React_5thBatch_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5339096"
+	},
+	"item": [
+		{
+			"name": "todos",
+			"item": [
+				{
+					"name": "GetAllTodos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/todos",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"todos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetTodos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/todos/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"todos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EndResponse",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/todos/response/end",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"todos",
+								"response",
+								"end"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Redirect",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/todos/response/redirect",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"todos",
+								"response",
+								"redirect"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MultipleRoute",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/todos/multiple/another",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"todos",
+								"multiple",
+								"another"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "WildCardRoute",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/todos/abbbbcd",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"todos",
+								"abbbbcd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateToDO",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"title\": \"Task to be created\",\n    \"completed\":false\n}"
+						},
+						"url": {
+							"raw": "{{url}}/todos",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"todos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

@@ -1,41 +1,21 @@
 var express = require('express');
+const todos = require("../controller/ToDoController");
 var router = express.Router();
 
+
 /* GET todos listing. */
-router.get('/', function(req, res, next) {
-    console.log('ToDo Routers');
-    res.json([{
-        id:1,
-        title: 'Task1'
-    },{
-        id:2,
-        title: 'Task2'
-    }]);
-});
+router.get('/', todos.getAllToDos);
+router.get('/:id', todos.getToDoById);
 
-function getToDoById(req, res, next) {
-    console.log('ToDo id ', req.params['id']);
-    let todoId = req.params['id'];
-    res.json({
-        url: req.url,
-        id: todoId
-    });
-};
+router.get('/ab+cd',todos.todoWildCard );
 
-router.get('/:id', getToDoById);
-router.get('/ab+cd', function(req, res, next) {
-    console.log('ToDo ab+cd Routers');
-    res.json({
-        url : req.url
-    });
-});
+router.get('/download/file', todos.downloadFile);
+router.get('/response/end', todos.responseEnd);
+router.get('/response/redirect', todos.todoRedirect);
 
-router.post('/', function(req, res, next) {
-    console.log('ToDo Routers post ',req.body);
-    res.json({
-        ... req.body,
-        done : true,
-    });
-});
+router.get('/multiple/another',todos.multipleRoute1);
+router.get('/multiple/another',todos.multipleRoute2);
+
+router.post('/', todos.createTodo);
 
 module.exports = router;
