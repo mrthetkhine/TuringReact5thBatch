@@ -1,22 +1,43 @@
 var todoService = require('./../service/TodoService');
-function getToDoById(req, res, next) {
+async function getToDoById(req, res, next) {
     console.log('ToDo id ', req.params['id']);
     console.log('Request time get todobyId ',req.requestTime);
     let todoId = req.params['id'];
 
-    let todo = todoService.getToDoById(todoId);
+    try
+    {
+        let todo = await todoService.getToDoById(todoId);
+        if(!todo)
+        {
+            res.status(400).json({
+                error:'ToDo not found'
+            });
+        }
+        else
+        {
+            res.json(todo);
+        }
+    }
+    catch(e)
+    {
+        res.status(400).json({
+            error:'ToDo not found'
+        });
+    }
 
-    res.json(todo);
+
 };
-function getAllToDos(req, res, next) {
+async function getAllToDos(req, res, next) {
     console.log('ToDo Routers');
-    res.json([{
-        id: 1,
-        title: 'Task1'
-    }, {
-        id: 2,
-        title: 'Task2'
-    }]);
+    let todos = await todoService.getAllToDos();
+    console.log('All todo from db ',todos);
+    res.json(todos);
+};
+async function getAllCompletedToDos(req, res, next) {
+    console.log('ToDo Routers');
+    let todos = await todoService.getAllCompletedToDos();
+    console.log('All todo from db ',todos);
+    res.json(todos);
 };
 function todoWildCard(req, res, next) {
     console.log('ToDo ab+cd Routers');
@@ -34,12 +55,51 @@ function multipleRoute2(req, res, next) {
         data : 'Data from another'
     });
 }
-function createTodo(req, res, next) {
+async function createTodo(req, res, next) {
     console.log('ToDo Routers post ',req.body);
-    res.json({
-        ... req.body,
-        done : true,
-    });
+    try {
+        const todo = await todoService.saveTodo(req.body);
+        if(!todo) throw Error('Cannot save todo');
+        await res.status(201).json(todo);
+
+    }catch(err)
+    {
+        console.log(err);
+        await res.status(400).json({message: err})
+    }
+
+}
+async function updateTodo(req, res, next) {
+
+    try {
+        let todoId = req.params['id'];
+        console.log('Id ',todoId, ' todo ',req.body)
+        const todo = await todoService.updateTodo(todoId,req.body);
+        if(!todo) throw Error('Cannot update todo');
+        await res.status(200).json(todo);
+
+    }catch(err)
+    {
+        console.log(err);
+        await res.status(400).json({message: err})
+    }
+
+}
+async function deleteTodo(req, res, next) {
+
+    try {
+        let todoId = req.params['id'];
+        console.log('Id ',todoId, ' todo ',req.body)
+        const todo = await todoService.deleteTodo(todoId);
+        if(!todo) throw Error('Cannot delete todo');
+        await res.status(200).json(todo);
+
+    }catch(err)
+    {
+        console.log(err);
+        await res.status(400).json({message: err})
+    }
+
 }
 function downloadFile(req, res, next) {
     console.log('ToDo download ',req.body);
@@ -55,10 +115,13 @@ function todoRedirect(req, res, next) {
 module.exports = {
     getToDoById,
     getAllToDos,
+    getAllCompletedToDos,
     todoWildCard,
     multipleRoute1,
     multipleRoute2,
     createTodo,
+    updateTodo,
+    deleteTodo,
     downloadFile,
     responseEnd,
     todoRedirect,

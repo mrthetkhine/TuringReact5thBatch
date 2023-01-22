@@ -5,8 +5,10 @@ var router = express.Router();
 
 /* GET todos listing. */
 router.get('/', todos.getAllToDos);
+router.get('/completed', todos.getAllCompletedToDos);
 router.get('/:id', todos.getToDoById);
-
+router.put('/:id', todos.updateTodo);
+router.delete('/:id', todos.deleteTodo);
 router.get('/ab+cd',todos.todoWildCard );
 
 router.get('/download/file', todos.downloadFile);
