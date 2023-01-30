@@ -1,6 +1,9 @@
 //Filename: Posts.js
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+/*
+   review use movie as reference
+   * */
 const ReviewSchema = new Schema({
     movie: {
         type: Schema.Types.ObjectId,

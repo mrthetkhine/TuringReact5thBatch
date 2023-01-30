@@ -10,6 +10,8 @@ const { db } = require('./config/database');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var todosRouters = require('./routes/todos');
+var movieRouter = require('./routes/movies');
+var reviewRouter = require('./routes/reviews');
 var app = express();
 
 
@@ -46,7 +48,8 @@ mongoose.connect(db, {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api/todos',todosRouters);
-
+app.use('/api/movies',movieRouter);
+app.use('/api/reviews',reviewRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
