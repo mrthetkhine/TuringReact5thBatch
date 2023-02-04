@@ -46,7 +46,7 @@ mongoose.connect(db, {
     .catch(err => console.log(err));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/api/users', usersRouter);
 app.use('/api/todos',todosRouters);
 app.use('/api/movies',movieRouter);
 app.use('/api/reviews',reviewRouter);
