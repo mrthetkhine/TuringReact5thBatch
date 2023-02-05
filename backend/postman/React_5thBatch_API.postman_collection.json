@@ -238,7 +238,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Titanic Update\",\n    \"director\": {\n        \"name\": \"Jame Cameron\",\n        \"phoneNo\": \"09993\",\n        \"_id\": \"63d7cc841fe50102fe39ebb8\"\n    },\n    \"year\": 2000\n   \n}"
+							"raw": "{\n    \"title\": \"Dark Night\",\n    \"director\": {\n        \"name\": \"Christopher Nolan\",\n        \"phoneNo\": \"09993\"\n        \n    },\n    \"year\": 2500\n   \n}"
 						},
 						"url": {
 							"raw": "{{url}}/movies/63d7cc2c1fe50102fe39ebb4",
@@ -257,7 +257,13 @@
 					"name": "GetMovies",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGUzYmUwNmU0MWQ5Y2I0N2M0ODg2NCIsImlhdCI6MTY3NTU4OTY4OH0.ZdOIxdwbwQrbsYc4M0BE41HCFHfdKf5Ay2NtSFD0EX0",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{url}}/movies",
 							"host": [
@@ -441,7 +447,13 @@
 					"name": "GetMovieByTitle",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGUzYmUwNmU0MWQ5Y2I0N2M0ODg2NCIsImlhdCI6MTY3NTU4OTY4OH0.ZdOIxdwbwQrbsYc4M0BE41HCFHfdKf5Ay2NtSFD0EX0",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{url}}/movies/title/Avatar",
 							"host": [
@@ -465,7 +477,13 @@
 					"name": "GetAllReview",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGUzYmUwNmU0MWQ5Y2I0N2M0ODg2NCIsImlhdCI6MTY3NTU4OTY4OH0.ZdOIxdwbwQrbsYc4M0BE41HCFHfdKf5Ay2NtSFD0EX0",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{url}}/reviews",
 							"host": [
@@ -491,7 +509,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"movie\":\"63d7cc2c1fe50102fe39ebb4\",\n    \"rating\":4,\n    \"review\":\"Not bad\"\n}"
+							"raw": "{\n    \"movie\":\"63d7cc2c1fe50102fe39ebb4\",\n    \"rating\":3,\n    \"review\":\"Not my taste\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/reviews",
@@ -528,6 +546,66 @@
 							"path": [
 								"reviews",
 								"63d7d4ce10917983b49924cf"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userName\": \"admin\",\n    \"password\":\"admin\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userName\": \"admin\",\n    \"password\":\"admin\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/users/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"login"
 							]
 						}
 					},
