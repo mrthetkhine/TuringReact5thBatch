@@ -10,6 +10,11 @@ import {Body} from './components/PageComponent';
 import Table from "./components/Table";
 import JsxProperty from "./components/JsxProperty";
 import GrayBorder from "./components/GrayBorder";
+
+import RenderWithCondition from "./components/RenderWithCondition";
+import EventDemo, {ParentEvent} from "./components/interaction/EventDemo";
+import ToDoListEventDemo from "./components/interaction/ToDoListEventDemo";
+import Counter from "./components/stateful/Counter";
 function App() {
   return (
     <div className="App">
@@ -24,10 +29,14 @@ function App() {
         {/*<Table/>*/}
       {/*  <JsxProperty/>*/}
 
-        <GrayBorder>
+      {/*  <GrayBorder>
             <h1>Hello</h1>
             <JsxProperty/>
-        </GrayBorder>
+        </GrayBorder>*/}
+        {/*<RenderWithCondition flag={true}/>*/}
+       {/* <ParentEvent/>*/}
+        <ToDoListEventDemo/>
+        <Counter/>
     </div>
   );
 }
