@@ -1,11 +1,19 @@
 import { useState } from 'react';
-function ToDo({item})
+function ToDo({item,deleteItem,updateItem})
 {
     let onDeleteHandler = (eventItem)=>{
         console.log('OnDelete ',eventItem);
+        deleteItem(eventItem);
+    };
+    let updateHandler =(eventItem)=> {
+      console.log('UpdateItem ',eventItem);
+        updateItem(eventItem);
     };
     return <div>
         {item.title}
+        <button type={"button"}
+                className={"btn btn-primary"}
+                onClick={(event)=>updateHandler(item)}>Update</button>
         <button type={"button"}
             className={"btn btn-primary"}
                 onClick={(event)=>onDeleteHandler(item)}>Delete</button>
@@ -31,11 +39,14 @@ function InputContainer({addNewItem})
         </button>
     </div>
 }
-function ToDoList({items})
+function ToDoList({items,deleteItem,updateItem})
 {
     console.log('ToDoList render');
     return <div>
-        {items.map(item=><ToDo key={item.id} item={item}/>)}
+        {items.map(item=><ToDo key={item.id}
+                               item={item}
+                               deleteItem={deleteItem}
+                               updateItem={updateItem} />)}
     </div>
 }
 export default function ToDoListEventDemo()
@@ -60,9 +71,24 @@ export default function ToDoListEventDemo()
         setItems([...items, item]);
         console.log('Add new item invoked');
     };
+    const deleteItem = (item)=>{
+      console.log('Delete item ',item);
+      setItems(items.filter(it=>it.id != item.id));
+    };
+    const updateItem =(item)=>{
+        console.log('Update item ',item);
+        let newItems = items.map(it=>it.id== item.id?{
+            ...it,
+            title:'Change'
+        }:it);
+        setItems(newItems);
+    };
+
     console.log('ToDoListEventDemo render');
     return (<div>
         <InputContainer addNewItem={addNewItem}/>
-        <ToDoList items={items}/>
+        <ToDoList items={items}
+                  deleteItem={deleteItem}
+                  updateItem={updateItem}/>
     </div>)
 }

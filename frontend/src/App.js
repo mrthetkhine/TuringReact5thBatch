@@ -15,6 +15,10 @@ import RenderWithCondition from "./components/RenderWithCondition";
 import EventDemo, {ParentEvent} from "./components/interaction/EventDemo";
 import ToDoListEventDemo from "./components/interaction/ToDoListEventDemo";
 import Counter from "./components/stateful/Counter";
+import CounterAlert from "./components/stateful/CounterAlert";
+import CounterTwo from "./components/stateful/CounterTwo";
+import ReRenderIssue from "./components/stateful/ReRenderIssue";
+import ToDoCloneIssue from "./components/stateful/ToDoCloneIssue";
 function App() {
   return (
     <div className="App">
@@ -36,7 +40,12 @@ function App() {
         {/*<RenderWithCondition flag={true}/>*/}
        {/* <ParentEvent/>*/}
         <ToDoListEventDemo/>
-        <Counter/>
+      {/*  <Counter/>
+        <Counter/>*/}
+     {/* <CounterAlert/>*/}
+      {/*<CounterTwo/>*/}
+     {/* <ReRenderIssue/>*/}
+     {/* <ToDoCloneIssue/>*/}
     </div>
   );
 }
