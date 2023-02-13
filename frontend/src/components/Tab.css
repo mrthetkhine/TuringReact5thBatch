@@ -1,0 +1,30 @@
+.tab-container
+{
+    background: lightgray;
+    margin:10px;
+    border-radius: 10px;
+    padding-top: 10px;
+}
+.header-container
+{
+
+}
+.tab-header
+{
+    width: 100px;
+    padding:10px;
+    font-weight: bold;
+    height: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor:pointer;
+}
+.tab-header.active
+{
+    border-bottom:5px solid aquamarine;
+}
+.tab-body
+{
+    min-height: 200px;
+    padding-top: 15px;
+}

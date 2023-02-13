@@ -19,7 +19,12 @@ import CounterAlert from "./components/stateful/CounterAlert";
 import CounterTwo from "./components/stateful/CounterTwo";
 import ReRenderIssue from "./components/stateful/ReRenderIssue";
 import ToDoCloneIssue from "./components/stateful/ToDoCloneIssue";
+import InputDemo from "./components/stateful/InputDemo";
+import Tab from "./components/Tab";
+import DeclarativeUI from "./components/DeclarativeUI";
+
 function App() {
+    const header = ['Tab1','Tab2','Tab3'];
   return (
     <div className="App">
       Hello from Main React
@@ -39,13 +44,22 @@ function App() {
         </GrayBorder>*/}
         {/*<RenderWithCondition flag={true}/>*/}
        {/* <ParentEvent/>*/}
-        <ToDoListEventDemo/>
+       {/* <ToDoListEventDemo/>*/}
       {/*  <Counter/>
         <Counter/>*/}
      {/* <CounterAlert/>*/}
       {/*<CounterTwo/>*/}
      {/* <ReRenderIssue/>*/}
      {/* <ToDoCloneIssue/>*/}
+     {/*   <InputDemo/>*/}
+     {/*<Tab headers={header}>
+        <div>
+            Child 1
+        </div>
+        <h1> Child 2</h1>
+         <InputDemo/>
+     </Tab>*/}
+        <DeclarativeUI/>
     </div>
   );
 }

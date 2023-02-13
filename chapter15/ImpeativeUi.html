@@ -1,0 +1,30 @@
+<html>
+    <body>
+       Price <input type="text" id="txtPrice">
+       <br/>
+       Qty <input type="text" id="txtQty">
+       <br/>
+       Total <span id="txtTotal"></div>
+    </body>
+    <script>
+
+        let txtPrice = document.getElementById('txtPrice');
+        let txtQty = document.getElementById("txtQty");
+        function updateTotal()
+        {
+            let price = parseFloat(txtPrice.value);
+            let qty = parseFloat(txtQty.value);
+
+            let total = price* qty;
+            document.getElementById("txtTotal").innerText = total;
+        }
+        txtPrice.addEventListener('change',(event)=>{
+            console.log('Key press');
+            updateTotal();
+        });
+        txtQty.addEventListener('change',(event)=>{
+            console.log('Key press');
+            updateTotal();
+        });
+    </script>
+</html>
