@@ -22,6 +22,9 @@ import ToDoCloneIssue from "./components/stateful/ToDoCloneIssue";
 import InputDemo from "./components/stateful/InputDemo";
 import Tab from "./components/Tab";
 import DeclarativeUI from "./components/DeclarativeUI";
+import SignupForm from "./components/formik/SignupForm";
+import SignupFormWithValidation from "./components/formik/SignupFormWithValidation";
+import ContextDemo from "./components/context/ContextDemo";
 
 function App() {
     const header = ['Tab1','Tab2','Tab3'];
@@ -59,7 +62,10 @@ function App() {
         <h1> Child 2</h1>
          <InputDemo/>
      </Tab>*/}
-        <DeclarativeUI/>
+     {/*   <DeclarativeUI/>*/}
+     {/*   <SignupForm/>*/}
+     {/*   <SignupFormWithValidation/>*/}
+        <ContextDemo/>
     </div>
   );
 }
