@@ -1,0 +1,53 @@
+<html>
+    <script>
+        let state = [
+            {
+                id : 1,
+                title : 'Task 1'
+            },
+            {
+                id : 2,
+                title : 'Task 2'
+            },
+        ];
+
+        function addActionCreator(payload)
+        {
+            return {
+                type : 'ADD_TO_DO',
+                payload
+            }
+        };
+        function deleteActionCreator(payload)
+        {
+            return {
+                type : 'DELETE_TO_DO',
+                payload
+            }
+        }
+        function dispatcher(state,action)
+        {
+            switch(action.type)
+            {
+                case 'ADD_TO_DO':
+                    return [...state,action.payload];
+                case 'DELETE_TO_DO':
+                    console.log('Delete to do ');
+                    return state.filter(todo=> todo.id != action.payload.id);
+            }
+        }
+        let addToDoAction = addActionCreator({
+            id : 3,
+            title : 'Task 3'
+        });
+        console.log('Add To Do ',addToDoAction);
+        let deleteToDoAction = deleteActionCreator({
+            id : 1,
+            title : 'Task 1'
+        });
+        let newState = dispatcher(state,addToDoAction);
+        console.log('New State ',newState);
+        newState =  dispatcher(newState,deleteToDoAction);
+        console.log('New State ',newState);
+    </script>
+</html>

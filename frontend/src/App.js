@@ -25,6 +25,9 @@ import DeclarativeUI from "./components/DeclarativeUI";
 import SignupForm from "./components/formik/SignupForm";
 import SignupFormWithValidation from "./components/formik/SignupFormWithValidation";
 import ContextDemo from "./components/context/ContextDemo";
+import ReducerCounter from "./components/reducer/ReducerCounter";
+import CustomReducer from "./components/reducer/CustomReducer";
+import ToDoWithReducer from "./components/reducer/ToDoWithReducer";
 
 function App() {
     const header = ['Tab1','Tab2','Tab3'];
@@ -65,7 +68,10 @@ function App() {
      {/*   <DeclarativeUI/>*/}
      {/*   <SignupForm/>*/}
      {/*   <SignupFormWithValidation/>*/}
-        <ContextDemo/>
+     {/*   <ContextDemo/>*/}
+     {/*   <ReducerCounter/>*/}
+     {/*   <CustomReducer/>*/}
+        <ToDoWithReducer/>
     </div>
   );
 }
