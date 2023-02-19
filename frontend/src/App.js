@@ -28,6 +28,12 @@ import ContextDemo from "./components/context/ContextDemo";
 import ReducerCounter from "./components/reducer/ReducerCounter";
 import CustomReducer from "./components/reducer/CustomReducer";
 import ToDoWithReducer from "./components/reducer/ToDoWithReducer";
+import ToDoListWithContext from "./components/context/reducerWithContext/ToDoListWithContext";
+import RefCounter from "./components/hook/RefCounter";
+import StopWatch from "./components/hook/StopWatch";
+import FocusDemo from "./components/hook/FocusDemo";
+import CustomInput from "./components/hook/CustomInput";
+import RefCounterProblem from "./components/hook/RefCounterProblem";
 
 function App() {
     const header = ['Tab1','Tab2','Tab3'];
@@ -71,7 +77,13 @@ function App() {
      {/*   <ContextDemo/>*/}
      {/*   <ReducerCounter/>*/}
      {/*   <CustomReducer/>*/}
-        <ToDoWithReducer/>
+     {/*   <ToDoWithReducer/>*/}
+       {/* <ToDoListWithContext/>*/}
+       {/* <RefCounter/>*/}
+        {/*<StopWatch/>*/}
+       {/* <FocusDemo/>*/}
+       {/* <CustomInput/>*/}
+        <RefCounterProblem/>
     </div>
   );
 }
