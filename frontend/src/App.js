@@ -34,6 +34,8 @@ import StopWatch from "./components/hook/StopWatch";
 import FocusDemo from "./components/hook/FocusDemo";
 import CustomInput from "./components/hook/CustomInput";
 import RefCounterProblem from "./components/hook/RefCounterProblem";
+import EffectDemo from "./components/effect/EffectDemo";
+import ChatRoom from "./components/effect/ChatRoom";
 
 function App() {
     const header = ['Tab1','Tab2','Tab3'];
@@ -78,12 +80,14 @@ function App() {
      {/*   <ReducerCounter/>*/}
      {/*   <CustomReducer/>*/}
      {/*   <ToDoWithReducer/>*/}
-       {/* <ToDoListWithContext/>*/}
+        <ToDoListWithContext/>
        {/* <RefCounter/>*/}
         {/*<StopWatch/>*/}
        {/* <FocusDemo/>*/}
        {/* <CustomInput/>*/}
-        <RefCounterProblem/>
+       {/* <RefCounterProblem/>*/}
+      {/*  <EffectDemo/>*/}
+       {/* <ChatRoom/>*/}
     </div>
   );
 }

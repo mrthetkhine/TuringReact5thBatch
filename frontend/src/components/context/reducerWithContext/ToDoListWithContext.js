@@ -1,4 +1,4 @@
-import {useContext, useReducer, useState} from "react";
+import {useContext, useEffect, useReducer, useState} from "react";
 import {ToDoItemsContext,ToDoDispatchContext} from "./ToDoContext";
 import {v4 as uuidv4} from "uuid";
 
@@ -16,6 +16,8 @@ function reducer(state,action)
 {
     switch (action.type)
     {
+        case 'LOAD_TO_DO':
+            return action.payload;
         case 'ADD_TO_DO':
             return [...state,action.payload];
         case 'DELETE_TO_DO':
@@ -123,6 +125,17 @@ function ToDoCounter()
 export default function ToDoListWithContext()
 {
     const [state,dispatch] = useReducer(reducer,initialState);
+    useEffect(()=>{
+        console.log('Fetch from API');
+        fetch('https://jsonplaceholder.typicode.com/todos')
+            .then(response=>response.json())
+            .then(json=>{
+                dispatch({
+                    type:'LOAD_TO_DO',
+                    payload:json
+                });
+            });
+    },[]);
     return (<div>
         To Do List with Context
         <ToDoItemsContext.Provider value={state}>
