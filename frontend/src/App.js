@@ -36,12 +36,16 @@ import CustomInput from "./components/hook/CustomInput";
 import RefCounterProblem from "./components/hook/RefCounterProblem";
 import EffectDemo from "./components/effect/EffectDemo";
 import ChatRoom from "./components/effect/ChatRoom";
+import CustomFormMik from "./components/formik/CustomFormMik";
+import CallBackDemo from "./components/hook/CallBackDemo";
+import DeferredDemo from "./components/hook/DeferredDemo";
+import IdDemo from "./components/hook/IdDemo";
 
 function App() {
     const header = ['Tab1','Tab2','Tab3'];
   return (
     <div className="App">
-      Hello from Main React
+
 
       {/*  <HelloWorld/>*/}
        {/* <HelloWorld/>*/}
@@ -80,7 +84,7 @@ function App() {
      {/*   <ReducerCounter/>*/}
      {/*   <CustomReducer/>*/}
      {/*   <ToDoWithReducer/>*/}
-        <ToDoListWithContext/>
+     {/*   <ToDoListWithContext/>*/}
        {/* <RefCounter/>*/}
         {/*<StopWatch/>*/}
        {/* <FocusDemo/>*/}
@@ -88,6 +92,10 @@ function App() {
        {/* <RefCounterProblem/>*/}
       {/*  <EffectDemo/>*/}
        {/* <ChatRoom/>*/}
+       {/* <CustomFormMik/>*/}
+       {/* <CallBackDemo/>*/}
+      {/*  <DeferredDemo/>*/}
+        <IdDemo/>
     </div>
   );
 }

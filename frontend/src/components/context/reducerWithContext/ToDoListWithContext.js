@@ -122,9 +122,13 @@ function ToDoCounter()
         <h1> Total todo count {todos.length}</h1>
     </div>);
 }
-export default function ToDoListWithContext()
+/*function something()
 {
-    const [state,dispatch] = useReducer(reducer,initialState);
+    const [state,setState] = useState('');
+    return state;
+}*/
+function useLoadApi(dispatch)
+{
     useEffect(()=>{
         console.log('Fetch from API');
         fetch('https://jsonplaceholder.typicode.com/todos')
@@ -136,6 +140,15 @@ export default function ToDoListWithContext()
                 });
             });
     },[]);
+}
+
+export default function ToDoListWithContext()
+{
+    const [state,dispatch] = useReducer(reducer,initialState);
+    useEffect(()=>{
+       console.log('First UseEffect Hook ');
+    });
+    useLoadApi(dispatch);
     return (<div>
         To Do List with Context
         <ToDoItemsContext.Provider value={state}>
