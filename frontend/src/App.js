@@ -40,6 +40,13 @@ import CustomFormMik from "./components/formik/CustomFormMik";
 import CallBackDemo from "./components/hook/CallBackDemo";
 import DeferredDemo from "./components/hook/DeferredDemo";
 import IdDemo from "./components/hook/IdDemo";
+import ImperativeHandleDemo from "./components/hook/ImperativeHandleDemo";
+import InsertionEffectDemo from "./components/hook/InsertionEffectDemo";
+import LayoutEffectDemo from "./components/hook/LayoutEffectDemo";
+import MemoDemo from "./components/hook/MemoDemo";
+import ExternalStore from "./components/hook/ExternalStore";
+import TransitionDemo from "./components/hook/TransitionDemo";
+import HeavyList from "./components/list/HeavyList";
 
 function App() {
     const header = ['Tab1','Tab2','Tab3'];
@@ -95,7 +102,15 @@ function App() {
        {/* <CustomFormMik/>*/}
        {/* <CallBackDemo/>*/}
       {/*  <DeferredDemo/>*/}
-        <IdDemo/>
+      {/*  <IdDemo/>*/}
+      {/*  <ImperativeHandleDemo/>
+        <CustomInput/>*/}
+       {/* <InsertionEffectDemo/>*/}
+       {/* <LayoutEffectDemo/>*/}
+        {/*<MemoDemo/>*/}
+        {/*<ExternalStore/>*/}
+       {/* <TransitionDemo/>*/}
+        <HeavyList/>
     </div>
   );
 }

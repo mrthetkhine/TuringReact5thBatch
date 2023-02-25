@@ -9,6 +9,7 @@ export default function CustomInput()
 
     function handleClick() {
         inputRef.current.focus();
+        inputRef.current.style.opacity = 0.2;
     }
 
     return (<div>

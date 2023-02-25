@@ -10,6 +10,7 @@
     "formik": "^2.2.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-paginate": "^8.1.4",
     "react-scripts": "5.0.1",
     "use-immer": "^0.8.1",
     "uuid": "^9.0.0",
@@ -39,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0"
   }
 }
