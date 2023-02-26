@@ -47,6 +47,9 @@ import MemoDemo from "./components/hook/MemoDemo";
 import ExternalStore from "./components/hook/ExternalStore";
 import TransitionDemo from "./components/hook/TransitionDemo";
 import HeavyList from "./components/list/HeavyList";
+import InifiniteScroll from "./components/list/InifiniteScroll";
+import MyModal from "./components/portal/MyModal";
+import MyModalDemo from "./components/portal/MyModalDemo";
 
 function App() {
     const header = ['Tab1','Tab2','Tab3'];
@@ -54,7 +57,7 @@ function App() {
     <div className="App">
 
 
-      {/*  <HelloWorld/>*/}
+        <HelloWorld/>
        {/* <HelloWorld/>*/}
        {/* <ClassComponent/>*/}
        {/* <ConditionalRendering/>*/}
@@ -110,7 +113,10 @@ function App() {
         {/*<MemoDemo/>*/}
         {/*<ExternalStore/>*/}
        {/* <TransitionDemo/>*/}
-        <HeavyList/>
+       {/* <HeavyList/>*/}
+     {/*   <InifiniteScroll/>*/}
+        {/*<MyModal open={true}/>*/}
+        <MyModalDemo/>
     </div>
   );
 }
