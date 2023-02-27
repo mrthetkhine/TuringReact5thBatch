@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import InfiniteScroll from "react-infinite-scroller";
 export default function InifiniteScroll()
 {
-    const data = new Array(1000).fill().map((value, index) => ({
+    const data = new Array(10).fill().map((value, index) => ({
         id: index,
         name: faker.name.firstName(5),
         body: faker.lorem.paragraph(8),

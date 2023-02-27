@@ -50,6 +50,11 @@ import HeavyList from "./components/list/HeavyList";
 import InifiniteScroll from "./components/list/InifiniteScroll";
 import MyModal from "./components/portal/MyModal";
 import MyModalDemo from "./components/portal/MyModalDemo";
+import FlushSync from "./components/FlushSync";
+import ClassBasedHelloWorld from "./components/classedbased/ClassBasedHelloWorld";
+import ClassCounter from "./components/classedbased/ClassCounter";
+import LifeCycleDemo from "./components/classedbased/LifeCycleDemo";
+import LifeCycleWrapper from "./components/classedbased/LifeCycleWrapper";
 
 function App() {
     const header = ['Tab1','Tab2','Tab3'];
@@ -57,7 +62,7 @@ function App() {
     <div className="App">
 
 
-        <HelloWorld/>
+       {/* <HelloWorld/>*/}
        {/* <HelloWorld/>*/}
        {/* <ClassComponent/>*/}
        {/* <ConditionalRendering/>*/}
@@ -116,7 +121,13 @@ function App() {
        {/* <HeavyList/>*/}
      {/*   <InifiniteScroll/>*/}
         {/*<MyModal open={true}/>*/}
-        <MyModalDemo/>
+      {/*  <MyModalDemo/>*/}
+      {/*  <FlushSync/>*/}
+        {/*<ClassBasedHelloWorld message={'Hello'}>
+            <span>hi</span>
+        </ClassBasedHelloWorld>*/}
+       {/* <ClassCounter/>*/}
+       <LifeCycleWrapper/>
     </div>
   );
 }

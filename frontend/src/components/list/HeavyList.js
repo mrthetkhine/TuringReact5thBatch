@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker';
 import {useEffect, useState} from "react";
 import ReactPaginate from "react-paginate";
-const data = new Array(10000).fill().map((value, index) => ({ id: index, title: faker.lorem.words(5), body: faker.lorem.sentences(4) }))
+const data = new Array(10).fill().map((value, index) => ({ id: index, title: faker.lorem.words(5), body: faker.lorem.sentences(4) }))
 export default function HeavyList()
 {
     const [pagination, setPagination] = useState({
