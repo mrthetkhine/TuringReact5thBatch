@@ -55,6 +55,15 @@ import ClassBasedHelloWorld from "./components/classedbased/ClassBasedHelloWorld
 import ClassCounter from "./components/classedbased/ClassCounter";
 import LifeCycleDemo from "./components/classedbased/LifeCycleDemo";
 import LifeCycleWrapper from "./components/classedbased/LifeCycleWrapper";
+import LifeCycleTwo from "./components/classedbased/LifeCycleTwo";
+import BugComponent from "./components/classedbased/BugComponent";
+import ErrorBoundary from "./components/classedbased/ErrorBoundary";
+import Greeting from "./components/classedbased/Greeting";
+import FuncGreeting from "./components/FuncGreeting";
+import JsxChildren from "./components/JsxChildren";
+import RepeatDemo from "./components/RepeatDemo";
+import DatePicker from "./components/thirdparty/DatePicker";
+import Border from "./components/pattern/hoc/Border";
 
 function App() {
     const header = ['Tab1','Tab2','Tab3'];
@@ -127,7 +136,25 @@ function App() {
             <span>hi</span>
         </ClassBasedHelloWorld>*/}
        {/* <ClassCounter/>*/}
-       <LifeCycleWrapper/>
+      {/* <LifeCycleWrapper/>*/}
+      {/*  <LifeCycleTwo/>*/}
+     {/* <ErrorBoundary>
+          <BugComponent/>
+      </ErrorBoundary>*/}
+       {/* <Greeting />*/}
+     {/*   <FuncGreeting message={'Hello'}/>*/}
+        {/*<JsxChildren>
+            {'hello'+(1+2)}
+        </JsxChildren>*/}
+       <Border>
+           <RepeatDemo/>
+       </Border>
+
+
+       {/* <Border>
+            <DatePicker/>
+        </Border>*/}
+
     </div>
   );
 }
