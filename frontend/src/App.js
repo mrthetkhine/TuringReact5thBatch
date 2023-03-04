@@ -64,6 +64,9 @@ import JsxChildren from "./components/JsxChildren";
 import RepeatDemo from "./components/RepeatDemo";
 import DatePicker from "./components/thirdparty/DatePicker";
 import Border from "./components/pattern/hoc/Border";
+import HocDemo from "./components/pattern/hoc/HocDemo";
+import ToDoWithFetchUrl from "./components/pattern/hoc/ToDoWithFetchUrl";
+import MouseTracker, {Cat} from "./components/pattern/render-property/MouseTracker";
 
 function App() {
     const header = ['Tab1','Tab2','Tab3'];
@@ -146,15 +149,26 @@ function App() {
         {/*<JsxChildren>
             {'hello'+(1+2)}
         </JsxChildren>*/}
-       <Border>
+      {/* <Border>
            <RepeatDemo/>
-       </Border>
+       </Border>*/}
 
 
        {/* <Border>
             <DatePicker/>
         </Border>*/}
-
+       {/* <HocDemo/>*/}
+       {/* <ToDoWithFetchUrl/>*/}
+        {/*<MouseTracker render={(position)=>{
+                return <Cat mouse={position}/>
+            }
+        }/>*/}
+        <MouseTracker render={(position)=>{
+            return (<div>
+                Position is {position.x},{position.y}
+            </div>);
+            }
+        }/>
     </div>
   );
 }
