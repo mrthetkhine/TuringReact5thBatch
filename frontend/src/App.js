@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
+import './Router.css';
 import HelloWorld from "./components/HelloWorld";
 import ClassComponent from "./components/ClassComponent";
 import ConditionalRendering from "./components/ConditionalRendering";
