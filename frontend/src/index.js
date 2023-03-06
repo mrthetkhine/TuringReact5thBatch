@@ -12,8 +12,14 @@ import Root,{
     action as rootAction,
 } from "./routes/Root";
 import ErrorPage from "./pages/ErrorPage";
-import Contact from "./routes/Contact";
-
+import Contact, {
+    loader as contactLoader,
+} from "./routes/Contact";
+import EditContact,{
+    action as editAction,
+} from "./routes/Edit";
+import { action as destroyAction } from "./routes/Destroy";
+import Index from "./routes/Index";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -23,8 +29,24 @@ const router = createBrowserRouter([
         action: rootAction,
         children: [
             {
+                index: true,
+                element: <Index />
+            },
+            {
                 path: "contacts/:contactId",
+                loader: contactLoader,
                 element: <Contact />,
+            },
+            {
+                path: "contacts/:contactId/edit",
+                element: <EditContact />,
+                loader: contactLoader,
+                action:editAction,
+            },
+            {
+                path: "contacts/:contactId/destroy",
+                action:destroyAction,
+                errorElement: <div>Something went wrong</div>,
             },
         ],
     },
