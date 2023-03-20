@@ -25,10 +25,18 @@ const initialState : ToDoState = {
 }
 export const loadAllToDo = createAsyncThunk(
     'todo/loadAllToDo',
-    async () => {
+    async (arg,state) => {
+        console.log('Get state ',state.getState());
+        console.log('Dispatch ',state);
         const response = await apiLoadAllTodo();
-        let json = response.json();
+        let json = await response.json();
         console.log('JSON from API ',json);
+        /*
+        state.dispatch({
+            type:'todo/loadAllToDoItem',
+            payload:json
+        });
+         */
         return json;
     }
 );
@@ -37,6 +45,9 @@ export const todoSlice = createSlice({
         name: 'todo',
         initialState,
         reducers: {
+            loadAllToDoItem:(state,action:PayloadAction<Todo[]>)=> {
+                state.items = [...action.payload]
+            },
             addTodo:(state,action:PayloadAction<Todo>)=>
             {
                 state.items = [...state.items,action.payload];
@@ -56,6 +67,7 @@ export const todoSlice = createSlice({
             .addCase(loadAllToDo.pending, (state) => {
                 console.log('Load all todo pending');
             })
+
             .addCase(loadAllToDo.fulfilled, (state,action) => {
                 console.log('loadAllToDo.fulfilled ',action);
                 state.items = action.payload;

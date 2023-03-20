@@ -497,6 +497,29 @@
 					"response": []
 				},
 				{
+					"name": "GetReviewByMovie",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGUzYmUwNmU0MWQ5Y2I0N2M0ODg2NCIsImlhdCI6MTY3NTU4OTY4OH0.ZdOIxdwbwQrbsYc4M0BE41HCFHfdKf5Ay2NtSFD0EX0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/reviews",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "CreateReview",
 					"request": {
 						"method": "POST",

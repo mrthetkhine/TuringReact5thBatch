@@ -3,6 +3,8 @@ import { Formik, Field, Form, FormikHelpers } from 'formik';
 import {addTodo, deleteTodo, loadAllToDo, selectTodo, Todo, updateTodo} from "./todoSlice";
 import "./Todo.css";
 import {useEffect, useState} from "react";
+import { useSelector } from 'react-redux'
+import {RootState} from "../../app/store";
 function TodoItem(props: { todo: Todo }) {
     const dispatch = useAppDispatch();
 
@@ -58,6 +60,15 @@ function getId()
 export default function TodoUi()
 {
     const todos = useAppSelector(selectTodo);
+    /*
+    const todos = useSelector((state:RootState)=>{
+        console.log('State ',state);
+        return {
+            items: state.todo.items.filter((todo:Todo)=>todo.userId=='1')
+        };
+    });
+
+     */
     const dispatch = useAppDispatch();
     useEffect(()=>{
         console.log('Use effect triggered');
