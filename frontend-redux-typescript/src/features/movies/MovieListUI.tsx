@@ -13,7 +13,9 @@ export default function MovieListUI()
             movie.items.map((m:MovieModel)=>{
                 return <MovieUi
                         key={m._id}
-                        movie={m}/>
+                        movie={m}
+                        showDetail={true}
+                />
             })
         }
     </div>);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
     BrowserRouter as Router,
     Route,
@@ -14,7 +14,10 @@ import MovieListUI from "./features/movies/MovieListUI";
 import HomePage from "./page/HomePage";
 import MoviePage from "./page/MoviePage";
 import MovieDetailPage from "./page/MovieDetailPage";
+import {useAppDispatch} from "./app/hooks";
+import {getAllMovie} from "./features/movies/movieSlice";
 function App() {
+
   return (
     <div className="App">
         <Router>

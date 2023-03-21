@@ -20,6 +20,7 @@ export interface MovieModel
 export interface MovieState
 {
     items: Array<MovieModel>;
+    loaded : boolean;
 }
 const initialState : MovieState = {
     items: [
@@ -49,15 +50,26 @@ const initialState : MovieState = {
 
          */
     ],
+    loaded:false,
 }
 export const getAllMovie = createAsyncThunk(
     'movie/getAllMovie',
-    async () => {
-        console.log("API get all movie");
-        const response = await apiGetAllMovie();
+    async (arg,thunkApi) => {
+        let state:any = thunkApi.getState();
 
-        console.log("All movie json ",response.data);
-        return response.data;
+        console.log("loaded ",state.movie);
+        if(!state.movie.loaded)
+        {
+            //console.log("API get all movie");
+            const response = await apiGetAllMovie();
+            console.log("All movie json ",response.data);
+            return response.data;
+        }
+        else
+        {
+            return state.movie.items;
+        }
+
     }
 );
 export const movieSlice = createSlice({
@@ -70,15 +82,12 @@ export const movieSlice = createSlice({
         builder
             .addCase(getAllMovie.fulfilled, (state,action) => {
                 state.items = action.payload;
+                state.loaded = true;
             })
 
 
     },
 });
 export const selectMovie = (state: RootState) => state.movie;
-export const selectMovieById = (state:RootState, movieId:string) =>
-    createSelector(
-        selectMovie,
-        state => state.items.filter(movie => movie._id === movieId)
-    );
+export const selectMovieById =  (movies:Array<MovieModel>,movieId:string) => movies.filter(movie=>movie._id ==movieId)[0];
 export default movieSlice.reducer;
