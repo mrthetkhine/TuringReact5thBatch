@@ -4,7 +4,7 @@ const axios = require('axios');
 console.log("axios default ",axios.defaults)
 
 axios.defaults.headers.post['Content-Type'] = 'application/json';
-/*
+
 let store:any;
 
 export const injectStore = (_store:any) => {
@@ -26,5 +26,4 @@ axios.interceptors.request.use(async function (config:any) {
     return error;
 });
 
-*/
 export default axios;

@@ -11,3 +11,11 @@ export function apiSaveReview(review:ReviewModel)
 {
     return axios.post(API,review);
 }
+export function apiUpdateReview(review:ReviewModel)
+{
+    return axios.put(API+'/'+review._id,review);
+}
+export function apiDeleteReview(review:ReviewModel)
+{
+    return axios.delete(API+'/'+review._id);
+}

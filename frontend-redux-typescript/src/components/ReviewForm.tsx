@@ -4,30 +4,33 @@ import {ReviewModel} from "../features/reviews/reviewSlice";
 
 export default function ReviewForm(props:{
     saveCallBack:(review:ReviewModel)=>void,
+    review?:ReviewModel,
 })
 {
-    const {saveCallBack} = props;
-    const [rating, setRating] = useState(0);
-    const [review,setReview] = useState('');
+    const {saveCallBack,review} = props;
+    console.log('Review ',review);
+    const [rating, setRating] = useState(review?.rating);
+    const [reviewText,setReviewText] = useState(review?.review);
     const handleRating = (rate: number) => {
         console.log('Set rating ',rate);
         setRating(rate);
     };
     const btnSaveHandler = ()=>{
-        console.log('Rating ',rating, 'Review ',review);
+        console.log('Rating ',rating, 'Review ',reviewText);
         saveCallBack({
+            ...review,
             rating,
-            review
+            review: reviewText
         });
     };
     return (<div>
        Rating: <Rating size={20}
                        onClick={handleRating}
-                        initialValue={0} />
+                       initialValue={rating} />
        <div>
           Review <input type={"text"}
-                        value={review}
-                        onChange={(event)=>setReview(event.target.value)}/>
+                        value={reviewText}
+                        onChange={(event)=>setReviewText(event.target.value)}/>
        </div>
         <button type={"button"}
                 className={"btn btn-primary"}
